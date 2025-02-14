@@ -1,0 +1,39 @@
+
+
+https://stackoverflow.com/questions/6505300/dynamically-create-and-click-a-link-with-jquery
+
+
+https://jsfiddle.net/fkwhvvhk/
+
+
+
+<button id="btn1">JS</button>
+
+<div class="um-field-value">1300 282 848</div>
+
+
+
+$("#btn1").click(function(){
+  var link = document.createElement('a');
+  link.href = "http://google.com";
+  link.target= "blank";
+  document.body.appendChild(link);
+  link.click();  
+});
+
+
+$(".um-field-value").click(function(){
+
+  
+  var mynum = $(this).text();
+  
+  alert(mynum);
+  
+
+  $("body").append('<a id="link" href="tel:'+mynum+'" target="blank">&nbsp;</a>');
+  
+  $('#link')[0].click();
+  
+});
+
+

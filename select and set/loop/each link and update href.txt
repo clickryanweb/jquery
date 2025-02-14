@@ -1,0 +1,23 @@
+
+
+https://stackoverflow.com/questions/7759823/get-the-href-attribute-for-each-link-in-a-section-of-html
+
+
+if($(".article-cat div a").length){
+
+  $(".article-cat div a").each(function () {
+    //alert(this.href);
+  
+    let thelink;
+  
+    thelink = $(this).attr('href');
+  
+    thelink = thelink.replace("/category", ""); 
+  
+    $(this).attr('href', thelink);
+  });
+  
+}
+
+
+

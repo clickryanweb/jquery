@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+</head>
+
+
+<body>
+
+<p>
+    <label for="start_time">Start Time</label>
+    <br>
+    <input id="start_time" name="start_time" type="text" value="01:40:00 PM">
+</p>
+<p>
+    <label for="end_time">End Time</label>
+    <br>
+    <input id="end_time" name="end_time" type="text" value="00:00:00 PM">
+</p>
+<p>
+   
+    <br>
+    <label id="duration" name="duration">
+</p>
+
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function () {
+    if ($('#duration').val() === '') {
+        updateDuration($('#start_time').val(), $('#end_time').val());
+    }
+
+    $('#start_time').on('change keyup', function () {
+        updateDuration($('#start_time').val(), $('#end_time').val());
+    });
+
+    $('#end_time').on('change keyup', function () {
+        updateDuration($('#start_time').val(), $('#end_time').val());
+    });
+
+    function updateDuration(startTime, endTime) {
+        var ms = moment(endTime, 'HH:mm:ss').diff(moment(startTime, 'HH:mm:ss')),
+            dt = moment.duration(ms),
+            h = Math.floor(dt.asHours()),
+            m = moment.utc(ms).format('mm'),
+            qwe = moment.utc(ms).format('ss');
+            
+
+
+
+var a = moment(startTime, 'hh:mm:ss');
+var b = moment(endTime, 'hh:mm:ss');
+
+//qwe = endTime.diff(startTime);
+
+
+        $('#duration').text(h + ' hours, ' + m + ' minutes' + ", " + qwe + "sec");
+    }
+});
+
+
+
+
+</script>
+
+
+
+
+  
+
+</body>
+</html>

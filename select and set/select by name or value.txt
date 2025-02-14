@@ -1,0 +1,18 @@
+
+
+
+
+
+https://www.tutorialrepublic.com/faq/how-to-select-an-element-by-name-in-jquery.php
+
+
+
+        // Select input which name attribute value is exactly 'email'
+        $('input[name="email"]').css("border-color", "blue");
+
+
+
+---by value----------------------------------------------------
+
+https://stackoverflow.com/questions/6732364/how-to-find-elements-with-value-x
+

@@ -1,0 +1,21 @@
+
+https://stackoverflow.com/questions/2098408/how-to-get-href-value-using-jquery/2098501
+
+var href = $(this).attr('href');
+
+
+
+//get link text...
+
+var thecat = $("a").text();
+
+alert(thecat);
+
+
+
+
+//other property
+
+theredir = $('ul.tabs--primary.nav.nav-tabs a.is-active').attr('data-drupal-link-system-path');
+
+

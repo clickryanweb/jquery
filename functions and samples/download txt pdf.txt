@@ -1,0 +1,18 @@
+
+http://jsfiddle.net/onigetoc/ucsse0sj/
+
+
+<a href="data:text/plain;charset=UTF-8,Hello%20World!" download="http://localhost/inhouseprinting2/wp-content/themes/inhouseprinting/assets/test.pdf">Download (static)</a>
+
+
+<a id="programatically" href="" download="http://localhost/inhouseprinting2/wp-content/themes/inhouseprinting/assets/test.pdf">Download (dynamic)</a>
+
+
+
+
+$("a#programatically").click(function(){
+    var now = new Date().toString();
+    this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(now);
+});
+
+

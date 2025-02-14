@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+</head>
+<body>
+
+
+<input type="text" name="" id="theval"> <input type="button" name="" value="test" id="thebtn">
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+  $("#thebtn").click(function(){
+    //
+    alert(isValidColor($('#theval').val()));
+  });
+
+});
+
+	
+
+function isValidColor(str) {
+    return str.match(/^#[a-f0-9]{6}$/i) !== null;
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+
+
+
+  $(document).ready(function() {
+      // Find all links that contain "#"
+      $('a[href*="#"]').each(function() {
+        // Modify the href attribute to something else
+        $(this).attr('href', 'https://example.com/new-page');
+      });
+    });
+
+
+
+//does not contains...
+
+  $(document).ready(function() {
+      // Find all links that do not contain "#"
+      $('a:not([href*="#"])').each(function() {
+        // Modify the href attribute to something else
+        $(this).attr('href', 'https://example.com/new-page');
+      });
+    });
+
+

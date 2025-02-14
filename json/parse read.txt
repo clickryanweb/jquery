@@ -1,0 +1,43 @@
+ jQuery(document).ready(function($) {
+
+     //xhh_WOMasterlst_hotel
+         //xhh_WOMasterHOTELNAME
+
+
+   $('#xhh_WOMasterlst_hotel').change(function()
+                {
+                var id=$(this).val();
+                var dataString = 'keyword='+ id;
+                //alert(dataString);
+
+$.ajax ({
+
+                                        
+                                        url: 'services/test2_NewRecord1_TextBox1_PTAutoFill1.aspx', //this is the JSON consist of option
+                                        data: dataString,
+                                        //method: "get",
+                                        //contentType: "application/json; charset=utf-8",
+                                        dataType: "text",
+                                        success: function(data){                                                                
+                                                  
+                                                  // alert("success...");
+                                                  //var obj = data;
+                                                  //alert(JSON.stringify(obj));
+
+                                                 var obj2 = jQuery.parseJSON(data);
+                                                 alert( obj2.NAME);
+
+                                                 $("#xhh_WOMasterHOTELNAME").val(obj2.NAME);
+                                                                                                 
+                                                
+                                                 
+                                                 
+                                        }
+                        }); //ajax...
+
+            
+
+        }); //function
+
+
+}); //jquery document...

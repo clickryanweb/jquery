@@ -1,0 +1,22 @@
+
+
+https://stackoverflow.com/questions/8951810/how-to-parse-json-data-with-jquery-javascript
+
+
+var root = 'https://api.inhouseprint.com.au/api/AllProducts?ProductREF=INHPCOR';
+
+
+$.ajax({ 
+    type: 'GET', 
+    url: root, 
+  //  data: { get_param: 'value' }, 
+  //  dataType: 'json',
+    success: function (data) { 
+        $.each(data, function(index, element) {
+                alert(element.ProductREF);
+        });
+    }
+});
+
+
+

@@ -1,0 +1,13 @@
+
+https://stackoverflow.com/questions/10277907/finding-all-iframe-srcs-with-jquery
+
+
+$(document).ready(function() {
+    $('#somebuttonid').click(function() {
+        $("iframe").each(function() {
+            var src = $(this).attr('src');
+            $(this).attr('src', src);  
+        });
+
+    });
+});

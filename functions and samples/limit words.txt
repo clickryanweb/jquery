@@ -1,0 +1,31 @@
+
+
+https://stackoverflow.com/questions/44025821/jquery-limit-number-of-words-in-div
+
+	https://jsfiddle.net/Lnk2dmnb/7/
+
+
+
+// there maybe performance issue...
+
+
+// Limit number of characters in div
+$("div, p").each(function() {
+	var textMaxChar = $(this).attr('data-max-words');
+  var text = $(this).text();
+
+	length = text.split(' ').length;
+	if(length > textMaxChar) {
+    var lastWord = text.split(' ')[textMaxChar];
+    var lastWordIndex = text.indexOf(lastWord);
+		$(this).text(text.substr(0, lastWordIndex) + '...');
+	}
+});
+
+
+
+// to apply...
+
+<p data-max-words="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ea esse accusantium nobis adipisci dignissimos? Vel esse facilis perferendis ipsa? Voluptatem earum, ratione! Consequuntur et assumenda minus, aut temporibus alias.</p>
+
+

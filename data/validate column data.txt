@@ -1,0 +1,54 @@
+
+ $(document).ready(function() {
+          $('.filter').multifilter()
+
+
+
+          var $myvar = "";
+       
+          $("#Select1").change(function () {
+              //alert($(this).find("option:selected").text() + ' clicked!');
+
+              $myvar = $(this).find("option:selected").text();
+
+
+
+
+              $(".container td").filter(function () {
+
+
+                  return $(this).text() != "";
+
+              }).removeClass('highlite');
+
+
+
+
+
+
+
+              //selected field...
+              $(".container td." + $myvar).filter(function () {
+
+                  //validation... (if not number)
+
+                  //alert("...");
+
+                  //return $(this).text() > 3;
+                  //if (!$.isNumeric($('#Amount').val())) 
+
+                      return (!$.isNumeric($(this).text()));
+
+              }).addClass('highlite');
+
+
+             
+
+
+          }); // end select
+
+
+          
+
+
+      })

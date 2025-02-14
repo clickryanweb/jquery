@@ -1,0 +1,41 @@
+
+
+
+
+https://www.geeksforgeeks.org/how-to-apply-css-property-to-a-child-element-using-jquery/
+
+
+///////
+
+
+$('.qweqwe').click(function(){
+    //alert('...');
+
+     //$(this).next('div').show();
+
+     var x = $(this);
+  
+      if ($(this).next('div').css('display') == 'none') {
+        
+        //x.css("display","block");
+        $(this).next('div').show();
+
+        //alert(x);
+
+        x.find(".fa, .fas").css({
+                    "transform": "rotate(90deg)"
+                });
+        
+      } else {
+        
+        //x.css("display","none");
+        $(this).next('div').css("display","none");
+        //alert('zzz');
+
+        x.find(".fa, .fas").css({
+                    "transform": "rotate(359deg)"
+                });
+      }
+
+});   
+

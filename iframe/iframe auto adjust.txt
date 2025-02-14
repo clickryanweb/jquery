@@ -1,0 +1,14 @@
+
+https://stackoverflow.com/questions/14334154/iframe-auto-adjust-height-as-content-changes
+
+jQuery(function($){
+  var lastHeight = 0, curHeight = 0, $frame = $('iframe:eq(0)');
+  setInterval(function(){
+    curHeight = $frame.contents().find('body').height();
+    if ( curHeight != lastHeight ) {
+      $frame.css('height', (lastHeight = curHeight) + 'px' );
+    }
+  },500);
+});
+
+

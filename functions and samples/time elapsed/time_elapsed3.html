@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<input name="start_time" id="start_time" style="width: 74px; height: 22px;" type="hidden" size="10" value="">
+
+<table class="Grid" cellspacing="0" cellpadding="0">
+        <tbody>
+
+
+
+        
+        <tr class="Row">
+          <td>&nbsp;&nbsp; <input onclick="updateDuration(this.value, this.id);" name="Label1" id="PMWRK133761Label1_10" style="width: 57px; height: 22px;" type="hidden" size="7" value="">&nbsp;
+          
+          <a id="duration_10"  href="?s_BLDG_NAME=&amp;PMWRK133761Order=Sorter_PmWrkID&amp;PMWRK133761Dir=ASC"></a>
+
+            &nbsp; </td> 
+          <td class="mycol">AL Fidell&nbsp;</td> 
+          <td class="mycol">11528&nbsp;</td> 
+          <td class="mycol">Electromechanical Release&nbsp;</td> 
+          <td class="mycol">MED SVCS BLDG&nbsp;</td> 
+          <td class="mycol">&nbsp;Basement</td> 
+          <td class="mycol">
+            <p>Corridor&nbsp;B155</p>
+          </td> 
+          <td class="taskid" style="display: none;"><a id="PMWRK133761WRKPM_ROW_1" href="PMMob.php?s_BLDG_NAME=&amp;WRKPM_ROW=205807&amp;TRADE=AL+Fidell&amp;PmWrkID=&amp;BLDG_NAME=MED+SVCS+BLDG&amp;RMDESC=Corridor&amp;RMNUM=">205807</a>&nbsp;</td> 
+          <td>Verify correct operation of electromechanical releasing device and that the door latches during fire alarm activation.  Fail and document any device that does not work properly.  Retest.&nbsp;</td>
+        </tr>
+ 
+
+        
+        <tr class="Row">
+          <td>&nbsp;&nbsp; <input onload="updateDuration(this.value, this.id);" name="Label1" id="PMWRK133761Label1_11" style="width: 57px; height: 22px;" type="hidden" size="7" value="">&nbsp;
+       
+       <a id="duration_11" href="?s_BLDG_NAME=&amp;PMWRK133761Order=Sorter_PmWrkID&amp;PMWRK133761Dir=ASC"></a>
+
+            &nbsp; </td> 
+          <td class="mycol">AL Fidell&nbsp;</td> 
+          <td class="mycol">11513&nbsp;</td> 
+          <td class="mycol">Electromechanical Release&nbsp;</td> 
+          <td class="mycol">MED SVCS BLDG&nbsp;</td> 
+          <td class="mycol">&nbsp;Basement</td> 
+          <td class="mycol">
+            <p>FIRST STEPS&nbsp;B192</p>
+          </td> 
+          <td class="taskid" style="display: none;"><a id="PMWRK133761WRKPM_ROW_2" href="PMMob.php?s_BLDG_NAME=&amp;WRKPM_ROW=205825&amp;TRADE=AL+Fidell&amp;PmWrkID=&amp;BLDG_NAME=MED+SVCS+BLDG&amp;RMDESC=FIRST+STEPS&amp;RMNUM=">205825</a>&nbsp;</td> 
+          <td>Verify correct operation of electromechanical releasing device and that the door latches during fire alarm activation.  Fail and document any device that does not work properly.  Retest.&nbsp;</td>
+        </tr>
+ 
+
+
+
+        <tr class="Row">
+          <td>&nbsp;&nbsp; 
+            <input name="Label1" onload="updateDuration(this.value, this.id);" id="PMWRK133761Label1_12" style="width: 57px; height: 22px;" type="hidden" size="7" value="">&nbsp;
+           
+           <a id="duration_12"  href="?s_BLDG_NAME=&amp;PMWRK133761Order=Sorter_PmWrkID&amp;PMWRK133761Dir=ASC"></a>
+
+            &nbsp; </td> 
+          <td class="mycol">Al Fidell&nbsp;</td> 
+          <td class="mycol">1268&nbsp;</td> 
+          <td class="mycol">EMERGENCY GENERATOR&nbsp;</td> 
+          <td class="mycol">MED SVCS BLDG&nbsp;</td> 
+          <td class="mycol">&nbsp;Grounds</td> 
+          <td class="mycol">
+            <p>GROUNDS&nbsp;GND</p>
+          </td> 
+          <td class="taskid" style="display: none;"><a id="PMWRK133761WRKPM_ROW_3" href="PMMob.php?s_BLDG_NAME=&amp;WRKPM_ROW=205843&amp;TRADE=Al+Fidell&amp;PmWrkID=&amp;BLDG_NAME=MED+SVCS+BLDG&amp;RMDESC=GROUNDS&amp;RMNUM=">205843</a>&nbsp;</td> 
+          <td>During Monthly Generator run: Inspect battery casings for leaks. (NFPA)&nbsp;</td>
+        </tr>
+ 
+
+     
+      </tbody></table>
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function () {
+  
+
+ //updateDuration($('#start_time').val(), $('#PMWRK133761Label1_1').val());
+
+
+
+    function updateDuration(endTime, theid) {
+
+  
+
+      startTime = $('#start_time').val();
+
+    if(startTime==""){
+      startTime=="00:00:00"
+    }
+
+
+    if(endTime==""){
+      endTime=="00:00:00"
+    }
+
+        alert(endTime + " " + theid);
+
+    //alert(startTime);
+    //alert(endTime);
+
+        var ms = moment(endTime, 'HH:mm:ss').diff(moment(startTime, 'HH:mm:ss')),
+            dt = moment.duration(ms),
+            h = Math.floor(dt.asHours()),
+            m = moment.utc(ms).format('mm'),
+            qwe = moment.utc(ms).format('ss');
+            
+
+
+        $('#duration').text(h + ' hours, ' + m + ' minutes' + ", " + qwe + "sec");
+    }
+
+
+});
+
+
+
+
+</script>
+
+
+
+
+  
+
+</body>
+</html>

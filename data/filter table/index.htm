@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='utf-8' />
+<meta content='en' name='language' />
+<meta content='width=device-width, initial-scale=1' name='viewport' />
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src='multifilter.js'></script>
+<title>table filter</title>
+<link href='style.css' media='screen' rel='stylesheet' type='text/css' />
+
+
+    <style>
+
+
+        .highlite {
+            font-weight: bold;
+            color: red !important;
+        }
+
+    </style>
+
+</head>
+
+
+
+<script type='text/javascript'>
+
+      $(document).ready(function() {
+          $('.filter').multifilter()
+
+
+
+          var $myvar = "";
+       
+          $("#Select1").change(function () {
+              //alert($(this).find("option:selected").text() + ' clicked!');
+
+              $myvar = $(this).find("option:selected").text();
+
+
+
+
+              $(".container td").filter(function () {
+
+
+                  return $(this).text() != "";
+
+              }).removeClass('highlite');
+
+
+
+
+
+
+
+              //selected field...
+              $(".container td." + $myvar).filter(function () {
+
+                  //validation... (if not number)
+
+                  //alert("...");
+
+                  //return $(this).text() > 3;
+                  //if (!$.isNumeric($('#Amount').val())) 
+
+                      return (!$.isNumeric($(this).text()));
+
+              }).addClass('highlite');
+
+
+             
+
+
+          }); // end select
+
+
+          
+
+
+      })
+
+
+  
+  </script>
+
+
+<body>
+
+    <label for="filter">Filter: </label> 
+    
+    <select id="Select1">
+        <option>id</option>
+        <option>part</option>
+        <option>desc</option>
+        <option>qwe</option>
+    </select>
+
+
+    <div class="container"><div class="filters"><div class="filter-container"><input autocomplete="off" class="filter" name="id" placeholder="id" data-col="id"> </div><div class="filter-container"><input autocomplete="off" class="filter" name="part" placeholder="part" data-col="part"> </div><div class="filter-container"><input autocomplete="off" class="filter" name="desc" placeholder="desc" data-col="desc"> </div><div class="filter-container"><input autocomplete="off" class="filter" name="qwe" placeholder="qwe" data-col="qwe"> </div></div></div>
+
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>part</th>
+                    <th>desc</th>
+                    <th>qwe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="id">1</td>
+                    <td class="part">1</td>
+                    <td class="desc">qwe1</td>
+                    <td class="qwe">dqwdqw5</td>
+                </tr>
+                <tr>
+                    <td class="id">2</td>
+                    <td class="part">2</td>
+                    <td class="desc">qwe2</td>
+                    <td class="qwe">dqwdqw4</td>
+                </tr>
+                <tr>
+                    <td class="id">3</td>
+                    <td class="part">3</td>
+                    <td class="desc">qwe3</td>
+                    <td class="qwe">14</td>
+                </tr>
+                <tr>
+                    <td class="id">4</td>
+                    <td class="part">4</td>
+                    <td class="desc">qwe4</td>
+                    <td class="qwe">dqwdqw2</td>
+                </tr>
+                <tr>
+                    <td class="id">5</td>
+                    <td class="part">5</td>
+                    <td class="desc">qwe5</td>
+                    <td class="qwe">23</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+</html>

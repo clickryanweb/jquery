@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+<style type="text/css">
+	span
+{
+    border:1px solid black;
+    width:100px;
+    height:40px;
+    display:block;
+    text-align:center;
+background: rgb(242,246,248); /* Old browsers */
+background: -moz-linear-gradient(left, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(109,107,97,1) 100%, rgba(224,239,249,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(242,246,248,1)), color-stop(50%,rgba(216,225,231,1)), color-stop(100%,rgba(109,107,97,1)), color-stop(100%,rgba(224,239,249,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(109,107,97,1) 100%,rgba(224,239,249,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(109,107,97,1) 100%,rgba(224,239,249,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(109,107,97,1) 100%,rgba(224,239,249,1) 100%); /* IE10+ */
+background: linear-gradient(to right, rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(109,107,97,1) 100%,rgba(224,239,249,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=1 ); /* IE6-9 */
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div>
+    <span></span>
+    <input type="text" id="captcha"></input>
+    <input type="button" id="submit" value="submit"></input>
+</div>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+        var a=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var a2=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var a3=[0,1,2,3,4,5,6,7,8,9];
+var get = Math.floor((Math.random() * 26) + 1);
+
+      
+    var get2=Math.floor((Math.random() * 26) + 1);
+    var get3=Math.floor((Math.random() * 9) + 1);
+var get4=Math.floor((Math.random() * 9) + 1);
+var first = a[get]+a3[get3];    
+var second = a2[get]+a[get2];   
+    var third = a3[get4];
+    var captch = first + second + third ;
+    
+    $("span").text(captch);
+    
+    $("#submit").click(function(){
+
+if($("#captcha").val() == captch )
+{
+    alert("Login Successful");
+}
+        else
+        {
+            alert("Please write correct captha");
+        }
+});
+});
+
+</script>
+</body>
+</html>

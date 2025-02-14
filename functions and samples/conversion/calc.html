@@ -1,0 +1,40 @@
+<html class="gr__jqueryscript_net"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="convert.js"></script>
+
+	
+    <style>
+    html,* { margin:0; padding:0;}
+    body { background-color:#fafafa; font-family:'Roboto'; text-align:center;}
+    .card {
+  background: #2196F3;
+  color:#fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 200px;
+  line-height:150px;
+  text-align:center;
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+    </style>
+<title>jQuery convert.js Plugin Basic Demo</title>
+</head><body data-gr-c-s-loaded="true">
+
+
+<div class="card"><h2></h2><p id="demo"> 1</p></div>	
+
+<script>
+	$("#demo").convert({
+		from: 'lb',
+		to: 'kg'
+	});
+</script>
+
+</body></html>

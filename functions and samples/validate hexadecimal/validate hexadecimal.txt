@@ -1,0 +1,17 @@
+
+
+
+https://stackoverflow.com/questions/8027423/how-to-check-if-a-string-is-a-valid-hex-color-representation/8027444
+
+
+
+https://stackoverflow.com/questions/8868799/in-javascript-regex-how-do-i-validate-that-a-string-is-a-valid-hexadecimal-colo
+
+
+
+function isValidColor(str) {
+    return str.match(/^#[a-f0-9]{6}$/i) !== null;
+}
+
+
+

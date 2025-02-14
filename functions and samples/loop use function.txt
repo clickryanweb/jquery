@@ -1,0 +1,109 @@
+
+
+
+
+                //loop thru categories...
+                for (var i = 0; i < thecats.length; i++) {
+
+
+                    if (thecats[i] != '') {
+
+                        thearr.push(i);
+                        //console.log(thecats[i]);
+
+                         optid = _.pluck(info.theinfo[thearr].AvaliableOptions, 'OptionID');
+
+                         optname = _.pluck(info.theinfo[thearr].AvaliableOptions, 'OptionName');
+
+
+                        for (q = 0; q < optname.length; q++) {
+                            //var opt = document.createElement("option");
+                            prepoption += '<option value="' + optid[q] + '">' + optname[q] + '</option>';
+                        }
+
+
+                        var theobj = thecats[i].replace(" ", "");
+                        var thestart = "<li class='col-12 col-xl-4 lst"+ theobj +"'><span class='lblerror'>This field is required.</span>";
+                        prepoption = "<option selected> " + theobj + "</option>" + prepoption;
+
+                         //alert(thestart);
+                        $('ul.row.justify-content-between.form-row').append(thestart);
+
+
+                        ///per option...
+
+                        if(theobj=="Size"){
+                            theaction = theobj+"_thefunction(this.value, this.id)";
+                        }else{
+                            theaction ="";
+                        }
+
+                        ///
+
+
+/*                        if(theobj){
+                            theaction = theobj+"_thefunction(this.value, this.id)";
+                        }else{
+                            theaction ="";
+                        }*/
+
+
+
+                        if(theobj!="Size"){
+                            theaction = "thedesc(this.value, this.id)";
+                        }else{
+                            theaction ="";
+                        }                        
+
+                        var selectBox = $('<select/>')
+                            .prop('name', i)
+                            .prop('id', theobj)
+                            .attr('onchange', theaction)
+                            .prop('class','dropdownCode')
+                            
+                    
+                        
+                        $('.lst'+ theobj).append(selectBox);
+                        $('select#'+theobj).append(prepoption);
+
+                        //clear up...
+                        prepoption = "";
+                        thearr = [];
+                    }
+
+
+
+                } //end for...
+
+
+
+
+///
+
+
+function thedesc(val1, theid) {
+
+    //reset...
+   jQuery('input[name="custom_options[thedesc]"]').val(' ');
+   jQuery('button#prod_addtocart').css('display', 'none');
+
+     
+        asd=jQuery('span.sku_wrapper span.sku').text() + ": ";
+    
+       jQuery(".dropdownCode :selected").each(function (i,sel) {
+
+
+            //alert(jQuery(sel).text());
+            
+            asd = asd + jQuery(sel).text() + ",";
+
+            thestr = asd.slice(0, -1);
+    
+            jQuery('input[name="custom_options[thedesc]"]').val(thestr);
+
+       }); 
+
+
+}
+
+

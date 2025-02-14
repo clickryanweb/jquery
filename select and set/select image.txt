@@ -1,0 +1,9 @@
+
+
+https://stackoverflow.com/questions/2023453/jquery-img-select
+
+
+var authorimg = $('article.node.node--type-author img').attr('src')
+
+
+

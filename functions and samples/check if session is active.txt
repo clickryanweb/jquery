@@ -1,0 +1,26 @@
+
+
+https://stackoverflow.com/questions/5599607/check-whether-a-php-session-exists-or-expired-using-ajax
+
+
+
+$.get('path/to/session_check.php', function(data) {
+     if( data == "Expired" ) {
+         alert("Session expired");
+     } else if (data == "Active" ) {
+         alert("Session active");
+     }
+ });
+
+
+* echo only
+
+or response.end
+
+
+
+
+
+
+
+

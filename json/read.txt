@@ -1,0 +1,31 @@
+	$(".mysku").change(function(){
+
+
+	//sel ctrl name...
+	var ctrlname=$(this).attr('name');
+	    
+	//sel event control id...
+	var myrow = ctrlname.replace("sku_", "");
+
+	var id=$(this).val();
+	var qstring = 'mysku='+ id;
+
+              $.ajax
+                ({               
+                        url: "http://localhost/tosapp/services/sku_desc.php?",
+				        data: qstring,
+                        contentType: "application/json; charset=utf-8",
+                        cache: false,
+                        success: function(data)
+                        {
+							//alert('...');
+                          //alert(data.descr);
+						  var obj2 = jQuery.parseJSON(data);
+                          alert( obj2.descr);
+                        } 
+                }); //end ajax...
+
+	//alert(myrow);
+
+                
+	});// end function...

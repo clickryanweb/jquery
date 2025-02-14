@@ -1,0 +1,103 @@
+
+
+
+https://jsfiddle.net/4t6bppjs/10/
+
+
+
+<style>
+
+                     
+                      
+.upgrade-service-level-bar {
+    background-color: #f8f8f8;
+    width: 67%;
+    padding: 20px 40px 20px 20px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.bar-full-witdh {
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+}
+
+#blueBar {
+    width: 1%;
+    height: 6px;
+    background-color: #007cba;
+    display: block;
+    float: left;
+}
+
+.bar-full-witdh span:last-child {
+    font-size: 12px;
+    position: absolute;
+    top: -3px;
+    right: -30px;
+}
+
+
+
+</style>
+
+
+
+<div class="upgrade-service-level-bar">
+	<div class="bar-full-witdh">
+		<span id="blueBar"></span>
+		<span id="progressPercentage">0%</span>
+	</div>
+</div>
+
+
+
+
+<script>
+
+
+
+//progress bar...
+
+var blueProgressBar = {
+
+	initialize: function() {
+		var serviceStatus = true; // Suppose value from service
+		var elem = document.getElementById("blueBar"); 
+		var perNum = document.getElementById("progressPercentage");
+
+		var width = 10; // intial progress bar width
+		var id = setInterval(progressBar, 10);
+		function progressBar() {
+			if (width >= 100 || serviceStatus === false) {
+				clearInterval(id);
+				return false;
+			} else {
+				width ++;
+				elem.style.width = width + '%'; 
+				perNum.innerHTML = width * 1  + '%';
+				return true;
+			}
+		}
+
+		function redirectUser(progressBar) {
+			if(progressBar) {
+      	setTimeout( function() {
+      		//---- window.location
+        }, 1000);
+      }
+		}
+
+		redirectUser(progressBar());
+	}
+
+}
+
+$(function() {
+	//blueProgressBar.initialize();
+});
+
+    </script>
+ 
+
+

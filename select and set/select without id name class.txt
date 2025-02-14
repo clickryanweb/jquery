@@ -1,0 +1,6 @@
+
+
+https://stackoverflow.com/questions/17242973/find-element-without-class-or-id-within-element-jquery
+
+
+

@@ -1,0 +1,40 @@
+
+
+
+https://stackoverflow.com/questions/13767919/jquery-event-wont-fire-after-ajax-call
+
+
+
+$(document).ready(function(){
+    // bind event handlers when the page loads.
+    bindButtonClick();
+});
+
+
+
+function bindButtonClick(){
+    $('.myClickableElement').click(function(){
+        ... event handler code ...
+    });
+}
+
+
+
+function updateContent(){
+    $.ajax({
+        url : '/ajax-endpoint.php',
+        data : {'onMyWay' : 'toServer'},
+        dataType : 'html',
+        type : 'post',
+        success : function(responseHtml){
+            // .myClickableElement is replaced with new (unbound) html element(s)
+            $('#container').html(responseHtml);
+
+            // re-bind event handlers to '.myClickableElement'
+            bindButtonClick();  
+        }
+    });
+}
+
+
+

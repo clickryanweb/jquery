@@ -1,0 +1,88 @@
+
+
+http://jsfiddle.net/XS5kY/
+
+
+1. - codecharge service
+
+
+	  $Component->description->SetValue(str_replace(array("\\", '"', "/", "\n" , "\r", "\t", "\b"), array("\\\\", '\"', '\/', '\\n', '', '\t', '\b'), $Component->description->GetValue()));
+   
+
+
+2. - consume by jquery ajax
+
+
+
+function theplan(theval){
+                
+                //$(".Controls2").show();
+        var id=theval;
+                var myurl = "../../svcs/svc_plan.php?devt="+id;
+        //alert(myurl);
+
+         //ajax...
+                 $.ajax
+                ({
+                
+                        type: "GET",
+                        url: myurl,
+                        //data: JSON.stringify(dataString),
+                        contentType: "application/json; charset=utf-8",
+                        cache: false,
+                        success: function(data)
+                        {
+  
+                          //alert(data);
+                        
+                        // preserve newlines, etc - use valid JSON
+                        //data = data.replace(/[^\x00-\x7F]/g, "");
+                        
+                       
+                        
+                     
+                        var dd = JSON.parse(data);
+                        
+                         
+						// Append the parsed HTML
+						///$log.append( html.val2 );
+						 
+					
+                        //alert(dd.val1);
+        
+                        ///$("#thepic").attr('src', dd.val1);
+                        
+                       /// $("#thedesc").html(dd.val2);
+                       
+                       var thedata = dd.val2;
+                       
+                      
+                       $("#thedesc").html(thedata.replace('&lt','<').replace('&gt', '>'));
+                                        
+                                                  
+              		}
+              		
+              		 
+       }); //end ajax...
+
+                
+ }// end function...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

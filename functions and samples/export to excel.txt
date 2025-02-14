@@ -1,0 +1,84 @@
+
+//codecharge
+
+<div id="dvData">
+<!-- BEGIN Grid Sewer -->
+<table>
+  <tr>
+    <th>Date Entered</th>
+ 
+    <th>Client</th>
+ 
+    <th>Program Name</th>
+ 
+    <th>Project Description</th>
+ 
+    <th>Begin Date</th>
+ 
+    <th>End Date</th>
+ 
+    <th>Typeofprogram</th>
+ 
+    <th>Projected List Size</th>
+ 
+    <th>Acutal List Size</th>
+ 
+    <th>Folder Path</th>
+ 
+    <th>Notes1</th>
+ 
+    <th>Notes2</th>
+ 
+    <th>Notes3</th>
+ 
+    <th>Notes4</th>
+ 
+    <th>Notes5</th>
+ 
+  </tr>
+ 
+  <!-- BEGIN Row -->
+  <tr>
+    <td>{DateEntered}&nbsp;</td> 
+    <td>{Client}&nbsp;</td> 
+    <td>{ProgramName}&nbsp;</td> 
+    <td>{ProjectDescription}&nbsp;</td> 
+    <td>{BeginDate}&nbsp;</td> 
+    <td>{EndDate}&nbsp;</td> 
+    <td>{Typeofprogram}&nbsp;</td> 
+    <td>{ProjectedListSize}&nbsp;</td> 
+    <td>{AcutalListSize}&nbsp;</td> 
+    <td>{FolderPath}&nbsp;</td> 
+    <td>{Notes1}&nbsp;</td> 
+    <td>{Notes2}&nbsp;</td> 
+    <td>{Notes3}&nbsp;</td> 
+    <td>{Notes4}&nbsp;</td> 
+    <td>{Notes5}&nbsp;</td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td colspan="15">No records</td> 
+  </tr>
+ <!-- END NoRecords -->
+</table>
+
+<!-- END Grid Sewer -->
+</div>
+
+
+
+
+<script src="js/jquery/jquery.js" type="text/javascript"></script>
+<script>
+
+
+    window.open('data:application/vnd.ms-excel,' + $('#dvData').html());
+    e.preventDefault();
+
+
+</script>
+
+
+
+

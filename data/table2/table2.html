@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <title>table data</title>
+</head>
+<body>
+
+
+    <div class='container'>
+        <div class='filters'>
+            <div class='filter-container'>
+                <input autocomplete='off' class='filter' name='name' placeholder='name' data-col='name' />
+            </div>
+            <div class='filter-container'>
+                <input autocomplete='off' class='filter' name='drink' placeholder='drink' data-col='drink' />
+            </div>
+            <div class='filter-container'>
+                <input autocomplete='off' class='filter' name='pizza' placeholder='pizza' data-col='pizza' />
+            </div>
+            <div class='filter-container'>
+                <input autocomplete='off' class='filter' name='movie' placeholder='movie' data-col='movie' />
+            </div>
+            <div class='clearfix'></div>
+        </div>
+    </div>
+
+
+
+    <div class='container'>
+        <table>
+            <thead>
+            <th>Name</th>
+            <th>Drink</th>
+            <th>Pizza</th>
+            <th>Movie</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Homer </td>
+                    <td> Squishie </td>
+                    <td> Magheritta </td>
+                    <td> The Avengers </td>
+                </tr>
+                <tr>
+                    <td> Marge </td>
+                    <td> Squishie </td>
+                    <td> Magheritta </td>
+                    <td> The Avengers </td>
+                </tr>
+                <tr>
+                    <td> Bart </td>
+                    <td> Squishie </td>
+                    <td> Pepperoni </td>
+                    <td> Black Dynamite </td>
+                </tr>
+                <tr>
+                    <td> Lisa </td>
+                    <td> Buzz Cola </td>
+                    <td> Pepperoni </td>
+                    <td> Iron Man </td>
+                </tr>
+                <tr>
+                    <td> Maggie </td>
+                    <td> Duff Beer </td>
+                    <td> Magheritta </td>
+                    <td> The Avengers </td>
+                </tr>
+                <tr>
+                    <td> Kent </td>
+                    <td> Duff Beer </td>
+                    <td> Hawaiian </td>
+                    <td> The Avengers </td>
+                </tr>
+                <tr>
+                    <td> Patty </td>
+                    <td> Duff Beer </td>
+                    <td> Hawaiian </td>
+                    <td> District 9 </td>
+                </tr>
+                <tr>
+                    <td> Selma </td>
+                    <td> Duff Beer </td>
+                    <td> Pepperoni </td>
+                    <td> The Avengers </td>
+                </tr>
+                <tr>
+                    <td> Otto </td>
+                    <td> Duff Beer </td>
+                    <td> Magheritta </td>
+                    <td> Star Trek </td>
+                </tr>
+                <tr>
+                    <td> Carl </td>
+                    <td> Duff Beer </td>
+                    <td> Pepperoni </td>
+                    <td> Star Trek </td>
+                </tr>
+                <tr>
+                    <td> Lenny </td>
+                    <td> Duff Beer </td>
+                    <td> Magheritta </td>
+                    <td> Pacific Rim </td>
+                </tr>
+                <tr>
+                    <td> Stu </td>
+                    <td> Squishie </td>
+                    <td> Hawaiian </td>
+                    <td> Black Dynamite </td>
+                </tr>
+                <tr>
+                    <td> Eddie </td>
+                    <td> Duff Beer </td>
+                    <td> Magheritta </td>
+                    <td> Star Trek </td>
+                </tr>
+                <tr>
+                    <td> Lou </td>
+                    <td> Duff Beer </td>
+                    <td> Pepperoni </td>
+                    <td> Pacific Rim </td>
+                </tr>
+                <tr>
+                    <td> Ned </td>
+                    <td> Duff Beer </td>
+                    <td> Pepperoni </td>
+                    <td> District 9 </td>
+                </tr>
+                <tr>
+                    <td> Barney </td>
+                    <td> Squishie </td>
+                    <td> Pepperoni </td>
+                    <td> Pacific Rim </td>
+                </tr>
+                <tr>
+                    <td> Moe </td>
+                    <td> Buzz Cola </td>
+                    <td> Hawaiian </td>
+                    <td> Star Trek </td>
+                </tr>
+                <tr>
+                    <td> Julius </td>
+                    <td> Squishie </td>
+                    <td> Pepperoni </td>
+                    <td> Pacific Rim </td>
+                </tr>
+                <tr>
+                    <td> Jimbo </td>
+                    <td> Squishie </td>
+                    <td> Pepperoni </td>
+                    <td> Star Trek </td>
+                </tr>
+                <tr>
+                    <td> Rod </td>
+                    <td> Duff Beer </td>
+                    <td> Magheritta </td>
+                    <td> Star Trek </td>
+                </tr>
+                <tr>
+                    <td> Todd </td>
+                    <td> Squishie </td>
+                    <td> Hawaiian </td>
+                    <td> The Avengers </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        //filter results based on query
+        function filter(selector, query) {
+            query = $.trim(query); //trim white space
+            query = query.replace(/ /gi, '|'); //add OR for regex query
+
+            $(selector).each(function () {
+                ($(this).text().search(new RegExp(query, "i")) < 0) ? $(this).hide().removeClass('visible') : $(this).show().addClass('visible');
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

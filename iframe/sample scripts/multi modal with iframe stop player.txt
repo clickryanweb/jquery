@@ -1,0 +1,170 @@
+
+https://stackoverflow.com/questions/4249809/reload-an-iframe-with-jquery
+
+
+https://stackoverflow.com/questions/6246939/start-play-embedded-iframe-youtube-video-on-click-of-an-image
+
+
+https://codepen.io/JacobLett/pen/KVeMxO
+
+
+<style>
+	.grid-container {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-gap: 39px;
+		/* background-color: #2196F3; */
+		padding: 10px;
+	}
+
+	.grid-container>div {
+
+		text-align: center;
+		padding: 20px 0;
+		font-size: 17px;
+	}
+
+	.tile-title {
+		padding: 12px 0 0 0;
+		font-weight: 600;
+	}
+
+
+	@media only screen and (max-width: 960px) {
+
+		.grid-container {
+			grid-template-columns: auto;
+		}
+	}
+</style>
+
+
+
+
+<div class="grid-container">
+
+	<?php
+
+	$counter = 1;
+
+	foreach ($attributes['tile-items'] as $inner) :
+
+		$theid = preg_replace('/[^A-Za-z0-9\-]/', '', $inner['title']);
+
+
+	?>
+
+		<div class="item<?php echo $counter ?>">
+
+
+			<?php if (isset($inner['cover-image'])) : ?>
+
+				<a href="#<?php echo $theid . $counter ?>" rel="lightbox" class="thetile">
+					<img src="<?php echo esc_url($inner['cover-image']['url']); ?>" alt="<?php echo esc_attr($inner['cover-image']['alt']); ?>">
+				</a>
+
+			<?php endif; ?>
+
+			<div class="tile-title"><?php echo $inner['title'] ?> </div>
+		</div>
+
+
+		<div class="modalbk" id="<?php echo $theid . $counter ?>">
+			<div class="lightbox">
+				<span id="qwe"></span>
+				<?php echo $inner['content']; ?>
+				<?php echo $inner['embed-code']; ?>
+
+				<a class="lightbox__close" href="#" id="<?php echo $theid . $counter ?>">X</a>
+			</div>
+		</div>
+
+
+	<?php
+
+		$counter = $counter + 1;
+
+	endforeach;
+
+	?>
+
+
+</div>
+
+
+<script>
+	//jQuery("a.lightbox__close").click(function() {
+
+
+	jQuery(".lightbox iframe").each(function() {
+		thesrc = jQuery(this).attr('src');
+
+		//jQuery(this).attr('src', src);
+
+		console.log(thesrc);
+
+		//jQuery(".lightbox #qwe").text(src);
+
+	});
+
+
+
+
+	///when close modal...
+	jQuery(".thetile").click(function() {
+
+		//tile id...
+		let thetileid = jQuery(this).attr('href');
+
+		thetileid = thetileid.replace("#", "");
+
+		//get iframe src...
+
+		let thetileid2 = jQuery('#' + thetileid + ' ' + 'iframe').attr('src');
+
+		//alert(thetileid2);
+
+		jQuery('#' + thetileid + ' ' + '#qwe').text(thetileid2);
+
+
+
+
+	});
+
+
+
+
+
+	jQuery("a.lightbox__close").click(function() {
+
+
+		//tile id...
+		let thetileid = jQuery(this).attr('id');
+
+
+		//get iframe src...
+		let theframesrc = jQuery('#' + thetileid + ' ' + 'iframe').attr('src');
+
+
+		//alert(theframesrc);
+
+		//jQuery('#' + thetileid + ' ' + '#qwe').text(thetileid2);
+
+
+		let theobjframe = '#' + thetileid + ' ' + 'iframe';
+
+		//console.log(theobjframe + ': ' + theframesrc);
+
+		setTimeout(
+			function() {
+				//...
+
+				//jQuery(theobjframe).prop('src', '');
+				jQuery(theobjframe).attr('src', theframesrc)
+
+				jQuery(theobjframe).attr('data-play', 0);
+
+			}, 2000);
+
+	});
+</script>

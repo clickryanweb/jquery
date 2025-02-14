@@ -1,0 +1,65 @@
+
+
+//name...
+<tr>    
+    <td>data1</td>
+    <td name="tcol1" class="bold"> data2</td>
+</tr>
+
+
+$('td[name ="tcol1"]')   // matches exactly 'tcol1'
+$('td[name^="tcol"]' )   // matches those that begin with 'tcol'
+$('td[name$="tcol"]' )   // matches those that end with 'tcol'
+$('td[name*="tcol"]' )   // matches those that contain 'tcol'
+
+
+-----------------------------------
+
+$("*") selects all elements.
+
+$("p") selects all <p> elements.
+
+$("p.intro") selects all <p> elements with class="intro".
+
+$("p#intro") selects the first <p> elements with id="intro".
+
+$(":animated") selects all elements that are currently animated.
+
+$(":button") selects all <button> elements and <input> elements of type="button".
+
+$(":even") selects even elements.
+
+$(":odd") selects odd elements.
+
+
+Some More Examples
+
+
+Syntax 	Description
+
+$("#intro") 	Selects the first element with id="intro"
+
+$(this) 	Selects the current HTML element
+$("p#intro:first") 	Selects the first <p> element with id="intro"
+$(".intro") 	Selects all elements with class="intro"
+$("ul li:first") 	Selects the first <li> element of the first <ul>
+$("ul li:first-child") 	Selects the first <li> element of every <ul>
+$("[href]") 	Selects all elements with an href attribute
+$("[href$='.jpg']") 	Selects all elements with an href attribute that ends with ".jpg"
+$("[href='#']") 	Selects all elements with an href value equal to "#"
+$("[href!='#']") 	Selects all elements with an href value NOT equal to "#"
+$("div#intro .head") 	Selects all elements with class="head" inside a <div> element with id="intro"
+
+
+
+--select link with text...
+
+$('a:contains("Link here")').css({background:"#000000"});
+
+
+
+
+
+
+
+

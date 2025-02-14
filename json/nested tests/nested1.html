@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+<script type="text/javascript">
+   $.noConflict();
+
+        jQuery(document).ready(function($) {
+
+
+
+
+var data = {"id":1,"name":"abc","address":{"streetName":"cde","streetId":2}};
+var props = 'address.streetName';
+alert('The value of ' + props + ' is ' + findProp(data, props));
+
+ 
+
+ function findProp(obj, prop, defval){
+    if (typeof defval == 'undefined') defval = null;
+    prop = prop.split('.');
+    for (var i = 0; i < prop.length; i++) {
+        if(typeof obj[prop[i]] == 'undefined')
+            return defval;
+        obj = obj[prop[i]];
+    }
+    return obj;
+}
+
+
+}); //jquery document...
+
+</script>
+
+</head>
+
+<body>
+</body>
+</html>

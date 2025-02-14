@@ -1,0 +1,17 @@
+
+
+https://stackoverflow.com/questions/748727/getting-the-current-src-of-an-iframe-using-jquery
+
+
+
+
+
+
+<div class="video-embed-field-provider-youtube video-embed-field-responsive-video video-embed-field-responsive-modal col-auto" style="width:854px;"><iframe width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&amp;start=0&amp;rel=0"></iframe>
+</div>
+
+
+
+	var qwe = $('.video-embed-field-provider-youtube iframe');
+
+	//alert(qwe[0].src);

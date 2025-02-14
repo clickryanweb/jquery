@@ -1,0 +1,33 @@
+
+https://www.w3schools.com/jquery/traversing_parent.asp
+
+https://stackoverflow.com/questions/17084839/check-if-any-ancestor-has-a-class-using-jquery
+
+
+
+ $(".blurb.profile.text-center").parent().addClass("mb-4");
+
+
+
+/// or...
+
+
+            if ($(this).parents('.thefoodtile').length) {
+                //console.log('hohoho');
+                $('.thefoodtile .qweqwe').next('div').show();
+                $(".thefoodtile .fas.fa-caret-right").css({
+                        "transform": "rotate(90deg)"
+                    });
+            }
+
+
+
+
+
+// select parent and attribute...
+
+	https://stackoverflow.com/questions/5333426/how-to-find-a-parent-with-a-known-class-in-jquery
+
+
+
+

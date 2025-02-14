@@ -1,0 +1,22 @@
+
+
+https://stackoverflow.com/questions/20265457/jquery-select-href-by-text/20265513
+
+
+
+
+$('a:contains("Link here")')
+
+
+//presice...
+
+$('a').filter(function(){
+    return this.innerHTML == 'Our Services'; // (Did you know you have a space at the end?)
+}).css({background:"#F00"});
+
+
+
+
+/// select link
+
+	[href='https://www.worktango.com/'] img

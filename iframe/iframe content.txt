@@ -1,0 +1,17 @@
+
+
+https://stackoverflow.com/questions/1796619/how-to-access-the-content-of-an-iframe-with-jquery
+
+
+https://community.tealiumiq.com/t5/Tealium-iQ-Tag-Management/Get-jQuery-Selector-in-iFrame/td-p/20755
+
+
+
+https://www.tutorialrepublic.com/faq/how-to-insert-html-content-into-an-iframe-using-jquery.php
+
+
+https://stackoverflow.com/questions/15812946/how-to-applying-css-style-into-an-iframe-content
+
+http://jsfiddle.net/wy8vh4zL/
+
+

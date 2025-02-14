@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <style>
+    #countdown {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="event_countdown"></div>
+
+    <div class="countdown-time-lbl d-block text-center" id="lessday">
+                                <span class="countdown-time-span-lbl">HR</span>
+                                <span class="countdown-time-span-lbl">MIN</span>
+                                <span class="countdown-time-span-lbl">SEC</span>
+                            </div>
+
+                            <div class="countdown-time-lbl d-block text-center d-none" id="moreday">
+                                <span class="countdown-time-span-lbl">DAY</span>
+                                <span class="countdown-time-span-lbl">HR</span>
+                                <span class="countdown-time-span-lbl">MIN</span>
+                            </div>
+
+
+<script>
+
+
+
+ let dtevent_start =  $('#dtevent_start').text();
+
+  let dtevent_end = $('#dtevent_end').text();
+  
+
+  let startdt = new Date(dtevent_start +'T23:59:59').getTime();
+
+  let endDate = new Date(dtevent_end +'T23:59:59').getTime();
+
+  // Update the event_countdown every second
+  let x = setInterval(function() {
+
+    // Get the current date and time
+    let now = new Date().getTime();
+
+    // Calculate the time remaining
+    let thetime = startdt - now;
+
+
+    let ddays = Math.floor(thetime / (1000 * 60 * 60 * 24));
+    let hours = Math.floor(thetime / (1000 * 60 * 60));
+    let minutes = Math.floor((thetime % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((thetime % (1000 * 60)) / 1000);
+
+
+
+    if(ddays<1){
+      $('#moreday').addClass('d-none');
+      $('#lessday').removeClass('d-none');
+    }else{
+      $('#moreday').removeClass('d-none');
+      $('#lessday').addClass('d-none');
+    }
+
+
+    // Formating...
+    minutes = (minutes < 10) ? '0' + minutes : minutes;
+    seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+
+
+    // Display the event_countdown
+    $('#event_countdown').text(ddays + ' : ' + minutes + ' : ' + seconds + ' ');
+
+
+
+    if (endDate < now) {
+      clearInterval(x);
+      $('#event_countdown').text('Event Ended');
+    }
+
+
+
+  }, 1000);
+
+  
+
+</script>
+
+</body>
+</html>
+
+
+</body>
+
+</html>
+
