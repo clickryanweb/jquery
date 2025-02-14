@@ -1,0 +1,5 @@
+
+
+var opt = new Option("0", "0");
+opt.setAttribute('selected', 'selected');
+document.getElementById(this.id).options[0] = opt;

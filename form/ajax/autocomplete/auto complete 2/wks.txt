@@ -1,0 +1,63 @@
+
+
+html...
+- includes
+- set css
+- jquery script
+
+<script type="text/javascript">$(document).ready(function(){
+
+	$("#TextBox1").autocomplete({
+
+         source: function(request, response) {
+
+        $.ajax({
+         url: "../service/c_test.asp",
+         dataType: 'json',
+         data: {
+         term : request.term,	//querystring
+         ptype : '1'},  //added querystring
+         success: function(data) {response(data);} }
+         );},
+         minLength: 1, //input character to trigger the ajax...
+
+	 select: function( event, ui ) {
+         var selectedObj = ui.item; 
+        $("#TextBox1").val(ui.item.value); //value to textbox...
+        $("#TextBox1").focus();
+        //return false;
+ }      
+
+ 
+ }); //function
+
+ });
+ 
+ </script>
+
+
+
+
+
+php...
+
+- prepare json format
+- sample format (you may use id, value or label):
+
+[ {"value" : "akl"}, {"value" : "anm"}, {"value" : "aop"}, {"value" : "asd4"}, {"value" : "awe"}, {"value" : "axc"} ]
+
+- sql is using like
+- use json validator 
+
+
+
+
+
+
+
+
+
+
+
+
+

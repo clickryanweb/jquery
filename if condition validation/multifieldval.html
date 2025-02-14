@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+
+
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+<body>
+
+https://stackoverflow.com/questions/3937513/javascript-validation-for-empty-input-field
+
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<input type=hidden name="oid" value="00D1s0000000Yap">
+<input type=hidden name="retURL" value="https://www.nudie.com.au/">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="dev+nudiefoods@afdigital.com">                                   -->
+<!--  ----------------------------------------------------------------------  -->
+
+Enquiry Type:<select  id="00N1s000000zsGj" name="00N1s000000zsGj" title="Enquiry Type"><option value="">--None--</option><option value="General Enquiry">General Enquiry</option>
+<option value="Product Enquiry">Product Enquiry</option>
+<option value="Media Enquiry">Media Enquiry</option>
+<option value="Stockist Enquiry">Stockist Enquiry</option>
+<option value="Sponsorship Enquiry">Sponsorship Enquiry</option>
+<option value="Career Enquiry">Career Enquiry</option>
+<option value="Other">Other</option>
+</select><br>
+
+<span class="frmprodname">Product Name:<input  id="00N1s000000zsGF" maxlength="255" name="00N1s000000zsGF" size="20" type="text" /><br></span>
+
+<span class="frmstorebought"> Store Bought:<input  id="00N1s000000zsGP" maxlength="255" name="00N1s000000zsGP" size="20" type="text" /><br>  </span>
+
+<span class="frmusebydate"> Use by Date:<input  id="00N1s000000zsGU" maxlength="255" name="00N1s000000zsGU" size="20" type="text" /><br>  </span>
+
+<span class="frmbatchnumber">Batch Number:<input  id="00N1s000000zsGZ" maxlength="255" name="00N1s000000zsGZ" size="20" type="text" /><br>  </span>
+
+<span class="frmprodsize">Product Size:<input  id="00N1s000000zsGe" maxlength="255" name="00N1s000000zsGe" size="20" type="text" /><br>  </span>
+
+<span class="frmfirstname"> <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br> </span>
+
+<span class="frmlastname"><label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+  </span>
+
+<span class="frmemail"><label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>  </span>
+
+<span class="frmmobile"> <label for="mobile">Mobile</label><input  id="mobile" maxlength="40" name="mobile" size="20" type="text" /><br> </span>
+
+<span class="frmsuburb"><label for="city">Suburb</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>  </span>
+
+<span class="frmstate"><label for="state">State</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>  </span>
+
+<span class="frmmsg">Message:<textarea  id="00N1s000000zsi4" name="00N1s000000zsi4" rows="5" type="text" wrap="soft"></textarea><br>  </span>
+
+
+<label for="lead_source" style="visibility:hidden">Lead Source</label>
+<select  id="lead_source" name="lead_source" style="display:none;" >
+<option value="">--None--</option>
+<option value="From Surging Australia">From Surging Australia</option>
+<option value="From 100% Campaign">From 100% Campaign</option>
+<option value="Advertisement">Advertisement</option>
+<option value="Customer Event">Customer Event</option>
+<option value="Employee Referral">Employee Referral</option>
+<option value="Google AdWords">Google AdWords</option>
+<option value="Other">Other</option>
+<option value="Partner">Partner</option>
+<option value="Purchased List">Purchased List</option>
+<option value="Trade Show">Trade Show</option>
+<option value="Webinar">Webinar</option>
+<option value="Website">Website</option>
+<option value="Contact Us" selected>Contact Us</option>
+<option value="Landing Page">Landing Page</option>
+</select><br>
+
+<input type="submit" name="submit">
+
+</form>
+
+
+
+
+<script type="text/javascript">
+
+//on load...
+jQuery("span.frmprodname, span.frmstorebought, span.frmusebydate, span.frmbatchnumber, span.frmprodsize").css("display", "none");
+
+
+
+//events...
+jQuery("#00N1s000000zsGj").change(function() {
+    //alert(jQuery(this).find("option:selected").text()+' clicked!');
+
+     enquiry();
+
+});
+
+
+
+ jQuery("input[type='submit']").click(function(){
+    
+  	
+
+
+  });
+
+
+
+jQuery('form').submit(function(e) {
+  //e.preventDefault();
+
+  	//required...
+  	//enquiry();
+
+  
+  	const isEmpty = str => !str.trim().length;
+
+   var selval = jQuery('#00N1s000000zsGj').find("option:selected").val();
+
+
+
+
+if(!selval){
+  	alert('Please select enquiry type.');
+    return false;
+  }
+
+
+
+	
+   if(selval=="Product Enquiry"){
+
+
+   		 
+
+	var a = jQuery("#00N1s000000zsGF").val();
+    var b = jQuery("#00N1s000000zsGP").val();
+    var c = jQuery("#00N1s000000zsGU").val();
+    var d = jQuery("#00N1s000000zsGZ").val();
+    var e = jQuery("#00N1s000000zsGe").val();
+
+    if (isEmpty(a), isEmpty(b), isEmpty(c), isEmpty(d), isEmpty(e)) {
+      alert("Please Fill All Required Fields");
+      return false;
+    }
+  
+
+   }else{
+	
+
+    var a2 = jQuery("#00N1s000000zsGj").val();
+    var b2 = jQuery("#first_name").val();
+    var c2 = jQuery("#last_name").val();
+    var d2 = jQuery("#email").val();
+
+    if (isEmpty(a2), isEmpty(b2), isEmpty(c2), isEmpty(d2)) {
+      alert("Please Fill All Required Fields");
+      return false;
+    }
+		
+
+  }
+
+
+});
+
+
+
+///functions/////////////
+
+function enquiry() {
+
+   var selval = jQuery('#00N1s000000zsGj').find("option:selected").val();
+
+	
+   if(selval=="Product Enquiry"){
+
+
+   		jQuery("span.frmprodname, span.frmstorebought, span.frmusebydate, span.frmbatchnumber, span.frmprodsize").css("display", "block");
+
+		
+
+
+   }else{
+
+
+   		jQuery("span.frmprodname, span.frmstorebought, span.frmusebydate, span.frmbatchnumber, span.frmprodsize").css("display", "none");
+
+   		
+
+   }
+
+
+}
+
+///////////
+
+
+function prodenq() {
+ 
+}
+
+
+function notprodenq() {
+   const isEmpty = str => !str.trim().length;
+
+	
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

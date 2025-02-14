@@ -1,0 +1,28 @@
+
+https://stackoverflow.com/questions/995183/how-to-allow-only-numeric-0-9-in-html-inputbox-using-jquery
+
+
+Your call to the function is a little off. It should be jQuery.isNumeric() or $.isNumeric(), so your code would look this:
+
+if(!$.isNumeric($('#Amount').val())) {
+   // do something
+}
+
+
+
+
+///
+
+
+ if(jQuery.isNumeric(jQuery('select#thenumdesigns').val()) == true){
+                            // alert('...2');
+                            
+
+                            if(jQuery('select#thenumdesigns')>=10){
+                                 theseloptions = theseloptions.slice(0, -11);
+                            }else{
+                                theseloptions = theseloptions.slice(0, -10);
+                            }
+                        }   
+
+

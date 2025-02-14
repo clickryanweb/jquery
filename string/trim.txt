@@ -1,0 +1,26 @@
+if($.trim($('#group_field').val()) != ''){
+
+
+
+if($.trim($('#group_field').text()) != ''){
+
+
+
+
+
+
+if (!a.trim()) {
+    // is empty or whitespace
+}
+
+
+
+-----------------
+
+https://www.w3schools.com/jsref/jsref_trim_string.asp
+
+var str = "       Hello World!        ";
+
+alert(str.trim());
+
+

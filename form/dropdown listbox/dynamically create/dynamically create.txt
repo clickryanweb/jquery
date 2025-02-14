@@ -1,0 +1,27 @@
+
+
+https://www.techiedelight.com/dynamically-create-drop-down-list-javascript/
+
+	//ok...
+	https://jsfiddle.net/techiedelight/f4e2nv1b/
+
+
+	https://jsfiddle.net/techiedelight/hw91zuxq/
+
+
+	https://jsfiddle.net/techiedelight/gwx482Lj/
+
+	
+
+
+
+https://www.sitepoint.com/community/t/how-to-create-a-dynamic-text-box-list/3139/6
+
+
+
+
+//onclick attr
+https://stackoverflow.com/questions/12284168/adding-onclick-event-dynamically-using-jquery/35346257
+
+
+

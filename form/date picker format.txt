@@ -1,0 +1,17 @@
+
+
+https://jsfiddle.net/taditdash/rU5Nc/
+
+
+    $("#ContentPanel5main_users2bday").datepicker({
+        changeMonth: true,
+         dateFormat: 'yy-mm-dd',
+        changeYear: true,
+        yearRange: '1910:' + curr_year,
+        minDate: '-100Y', //100 Years Old
+                  maxDate: '0' //Today
+                //  defaultDate: '-1Y', //Default to One Year Ago to show 12 months
+                //  yearRange: '-100:2017' //Show 100 
+    });
+
+

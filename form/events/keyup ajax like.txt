@@ -1,0 +1,62 @@
+
+
+https://jsfiddle.net/umaar/t82gZ
+
+http://jsfiddle.net/onigetoc/f28xbu40/
+
+
+
+<form id="live-search" action="" class="styled" method="post">
+    <fieldset>
+        <input type="text" class="text-input" id="filter" value="" />
+        <span id="filter-count"></span>
+    </fieldset>
+</form>
+
+<nav>
+    <ul>
+        <li><a href="#">Jim James</a></li>
+        <li><a href="#">Hello Bye</a></li>
+        <li><a href="#">Wassup Food</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Bleep bloop</a></li>
+        <li><a href="#">jQuery HTML</a></li>
+        <li><a href="#">CSS HTML AJAX</a></li>
+        <li><a href="#">HTML5 Net Set</a></li>
+        <li><a href="#">Node Easy</a></li>
+        <li><a href="#">Listing Bloop</a></li>
+        <li><a href="#">Contact HTML5</a></li>
+        <li><a href="#">CSS3 Ajax</a></li>
+        <li><a href="#">ET</a></li>
+    </ul>
+</nav>
+
+
+
+$(document).ready(function(){
+    $("#filter").keyup(function(){
+ 
+        // Retrieve the input field text and reset the count to zero
+        var filter = $(this).val(), count = 0;
+ 
+        // Loop through the comment list
+        $("nav ul li").each(function(){
+ 
+            // If the list item does not contain the text phrase fade it out
+            if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                $(this).fadeOut();
+ 
+            // Show the list item if the phrase matches and increase the count by 1
+            } else {
+                $(this).show();
+                count++;
+            }
+        });
+ 
+        // Update the count
+        var numberItems = count;
+        $("#filter-count").text("Number of Comments = "+count);
+    });
+});
+
+

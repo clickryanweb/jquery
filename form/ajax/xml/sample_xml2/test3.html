@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extract and Read XML Data Using jQuery and Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <style>
+        #books {
+            font:12px Arial;
+            width:500px;
+            text-align:center;
+            overflow:hidden;
+        }
+        #books div  {
+            width:auto;
+            text-align:left;
+            margin:1px;
+            padding:2px 5px;
+            letter-spacing:1px;
+        }
+    </style>
+</head>
+
+<body>
+  
+    <input type="button" value="Click it!" id="bt" />
+
+
+
+    <div id="books"></div>
+
+
+ <textarea id="jsonArea" cols="55" rows="15"></textarea>
+
+
+
+ http://jsfiddle.net/somethingkindawierd/ThzqL/
+
+
+</body>
+
+
+<script>
+
+
+
+
+    $(document).ready(function() {
+
+
+
+
+
+        $('#bt').click(function () {
+        
+
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost/inhouseprinting2/api/GetOptions/?ProductREF=INHPCOR',           // The file path.
+                dataType: "text",
+                success: function(data){                                                                
+                                                  
+
+                var stringify = JSON.parse(data);
+
+                var thecat = "";
+
+                for (var i = 0; i < stringify.length; i++) {
+
+                    //alert(stringify[i]['CatName']);
+
+                    thecat = stringify[i]['CatName'];
+
+
+                    if(thecat=='Size'){
+                        //alert(stringify[i]['AvaliableOptions'].OptionName);
+
+                        var props = 'AvaliableOptions.OptionName';
+                        alert('The value of ' + props + ' is ' + findProp(data, props));
+
+                    }
+
+
+                }
+             
+                                                 
+                                                 
+                }
+
+                
+            });
+        });
+
+
+
+///
+
+
+function findProp(obj, prop, defval){
+    if (typeof defval == 'undefined') defval = null;
+    prop = prop.split('.');
+    for (var i = 0; i < prop.length; i++) {
+        if(typeof obj[prop[i]] == 'undefined')
+            return defval;
+        obj = obj[prop[i]];
+    }
+    return obj;
+}
+
+
+
+///
+
+});
+</script>
+</html>

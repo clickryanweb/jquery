@@ -1,0 +1,6 @@
+var value = parseFloat($('#invest_amount').val());
+if (!isNaN(value)) {
+    $('#fee').val(value * 0.035);
+} else {
+    alert('The entered value is not a valid number');
+}

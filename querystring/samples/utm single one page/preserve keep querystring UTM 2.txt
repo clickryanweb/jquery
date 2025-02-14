@@ -1,0 +1,128 @@
+
+sample: https://stgmelbournehr.wpengine.com/?utm_term=ts_nash&hsmemberId=%7b%7b%20contact.hs_object_id%20%7d%7d&utm_campaign=hrsm2023&utm_medium=email&utm_content=followup&utm_source=telesales
+
+
+https://medium.com/@skychew/how-to-pass-utm-tags-from-home-page-to-other-pages-c148d80ef64
+
+
+
+
+
+    ///
+
+
+    let utm_source = getQueryString()["utm_source"];
+    let utm_medium = getQueryString()["utm_medium"];
+    let utm_campaign = getQueryString()["utm_campaign"];
+    let utm_term = getQueryString()["utm_term"];
+    let utm_content = getQueryString()["utm_content"];
+    let hsmemberId = getQueryString()["hsmemberId"];
+
+
+    let theparam = window.location.hash;
+
+    //the first anchor val...
+    let thehash = theparam.split('?')[0];
+
+    let theutms = theparam.replace(thehash, "");
+
+
+    //?utm_source=hubspot&utm_medium=email&utm_campaign=ohslm2023&utm_content=awareness&utm_term=asset01?hsmemberId={{contact.hs_object_id}}
+
+    if (!theutms) {
+        theutms = "?utm_source=" + utm_source + "&utm_medium=" + utm_medium + "&utm_campaign=" + utm_campaign + "&utm_content=" + utm_content + "&utm_term=" + utm_term + "?hsmemberId={{contact.hs_object_id}}";
+    }
+
+
+    //alert(utm_source);
+
+
+    jQuery(document).ready(function(jQuery) {
+        jQuery(function() {
+
+
+
+            $('a[href*="#"]').each(function() {
+
+
+                let withhash = $(this).attr('href');
+
+                $(this).attr("href", "/" + theutms + withhash);
+
+            });
+
+
+            ///
+
+            $('a:not([href*="#"])').each(function() {
+
+                //alert(theurl);
+
+                let theurl = $(this).attr('href');
+
+                $(this).attr("href", theurl + theutms);
+
+            });
+
+
+        });
+
+
+        ///
+
+        // $('.agenda-nav.desktop .nav-link[data-toggle="dropdown"]').click(function() {
+        //     window.location.href = "/" + theutms + '/#agenda__cta';
+        //     return false;
+        // });
+
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+
+            let href = $(this).attr('href');
+
+            let theparam2 = $(this).prop("hash");
+
+            alert(theparam2);
+
+            if ($(theparam2).length) {
+               $('html, body').animate({
+                scrollTop: $(theparam2).offset().top
+              }, 'slow');
+
+            }else{
+
+              window.location.replace(href);
+
+            }
+
+
+           
+
+        });
+
+
+
+
+
+    });
+
+
+
+
+
+
+function getQueryString() {
+    var result = {},
+        queryString = location.search.substring(1),
+        re = /([^&=]+)=([^&]*)/g,
+        m;
+
+    while (m = re.exec(queryString)) {
+        result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    }
+
+    return result;
+}
+
+
+

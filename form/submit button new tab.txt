@@ -1,0 +1,7 @@
+
+//name of the form...
+
+<input onclick="$('#contentpresenze1').attr('target', '_blank');" name="qwe" type="submit" value="Export per ati" alt="Button1" id="contentpresenze1Button1" class="Button">
+
+
+

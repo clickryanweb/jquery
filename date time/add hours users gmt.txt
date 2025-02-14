@@ -1,0 +1,95 @@
+
+
+https://forum.jquery.com/topic/how-to-add-a-number-of-hours-to-time-hh-mm
+
+http://jsfiddle.net/mdqgefc9/1/
+
+https://stackoverflow.com/questions/29206453/best-way-to-convert-military-time-to-standard-time-in-javascript
+
+
+<label class="mytime">13:18</label>
+<br/>
+<span class="mytime">8:28</span>
+<br/>
+<span class="mytime">9:38</span>
+<br/>
+<span class="mytime">10:48</span>
+<br/>
+<span class="mytime">11:58</span>
+<br/>
+
+
+
+
+$(function () {
+    $('.mytime').each(function () {
+ 
+    
+        var timeElements = $(this).text().split(":");
+        var theHour = parseInt(timeElements[0]);
+        var theMintute = timeElements[1];
+        //var newHour = theHour + thegmt;
+        var newHour = getTimeZone(theHour);
+        
+        qwe = newHour + ":" + theMintute + ":00";
+        
+        
+        $(this).text(convert(qwe));
+    });
+});
+
+
+function getTimeZone(qwe) {
+
+    var offset = new Date().getTimezoneOffset(),
+        o = Math.abs(offset);
+   // return (offset < 0 ? "+" : "-") + ("00" + Math.floor(o / 60)).slice(-2) + ":" + ("00" + (o % 60)).slice(-2);
+
+    thewhat = (offset < 0 ? "+" : "-");
+    theadd = 0;
+    thehrs= ("00" + Math.floor(o / 60)).slice(-2) + ":" + ("00" + (o % 60)).slice(-2);
+
+
+    thehrs = thehrs.slice(0, -3);
+
+    if(thewhat=='+'){
+        theadd = Number(qwe)+Number(thehrs)
+    }else{
+        theadd = Number(qwe)-Number(thehrs)
+    }
+    
+
+    return theadd;
+
+}
+
+
+
+function convert(time){
+        time = time.split(':'); // convert to array
+
+// fetch
+var hours = Number(time[0]);
+var minutes = Number(time[1]);
+var seconds = Number(time[2]);
+
+// calculate
+var timeValue;
+
+if (hours > 0 && hours <= 12) {
+  timeValue= "" + hours;
+} else if (hours > 12) {
+  timeValue= "" + (hours - 12);
+} else if (hours == 0) {
+  timeValue= "12";
+}
+ 
+timeValue += (minutes < 10) ? ":0" + minutes : ":" + minutes;  // get minutes
+//timeValue += (seconds < 10) ? ":0" + seconds : ":";  // get seconds
+timeValue += (hours >= 12) ? " P.M." : " A.M.";  // get AM/PM
+
+return timeValue;
+
+}
+
+

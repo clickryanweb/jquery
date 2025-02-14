@@ -1,0 +1,33 @@
+$(document).ready(function()
+{
+   $("#mycontentPanel1main_regstate_id").change(function()
+
+   	 {
+                var id=$(this).val();
+                var dataString = 'regdesc='+ id;
+                //alert(dataString);
+
+        	$.ajax ({
+
+					
+					url: 'http://localhost/membersportal/svcs/svc_cities.php?', //this is the JSON consist of option
+					data: dataString,
+					contentType: "application/json; charset=utf-8",
+					cache: false,
+					success: function(html){                                                                
+					$("#mycontentPanel1main_regcity").html(html)  //replacing option values for the listbox
+					}
+			}); //ajax...
+
+
+                }); //function
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+}); //jquery document...

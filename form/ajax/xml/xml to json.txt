@@ -1,0 +1,12 @@
+
+
+https://stackoverflow.com/questions/1773550/convert-xml-to-json-and-back-using-javascript
+
+
+https://github.com/abdolence/x2js
+
+
+//change jquery library...
+http://jsfiddle.net/abdmob/gkxucxrj/1/
+
+

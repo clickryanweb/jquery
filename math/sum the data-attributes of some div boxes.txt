@@ -1,0 +1,21 @@
+
+<input type=text class="total"  data-grp="1" value="1">
+<input type=text class="total"  data-grp="1" value="2">
+
+<br>
+
+<input type=text class="total"  data-grp="2" value="3">
+<input type=text class="total"  data-grp="2" value="4">
+
+<div class="sum_total"></div>
+
+
+$( document ).ready(function() {
+       var total = 0;
+        $('*[data-grp="1"]').each(function (i, price) {
+            var price = $(this).attr('value')
+            total = total + parseInt(price);
+            $('.sum_total').text(total);
+      });
+});
+

@@ -1,0 +1,6 @@
+
+
+$('#window').html("<img src="image_url" />").load('http://mysite.com/mypage.php');
+
+
+

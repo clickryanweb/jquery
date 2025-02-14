@@ -1,0 +1,29 @@
+
+
+   $("#car_makemake").change(function(){
+                
+		$(".Controls2").show();
+                var id=$(this).val();
+                var dataString = 'make_id='+ id;
+                //alert(dataString);
+                
+                $.ajax
+                ({
+                
+                        url: "../../services/ajax_carmodel.php?",
+                        data: dataString,
+                        contentType: "application/json; charset=utf-8",
+                        cache: false,
+                        success: function(html)
+                        {
+                          //alert(dataString);
+                          $(".mymodel").html(html);
+                        } 
+                }); //end ajax...
+                
+        });// end function...
+
+
+
+
+

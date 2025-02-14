@@ -1,0 +1,26 @@
+
+
+<input type="text" id='container' value="4">
+
+
+// Use $.map to iterate over a an array so we can use the
+// index to emulate the 0..X capability of Perl, PHP etc.
+// This also shows how to generate HTML inline without resorting
+// to the use or temporary variables to accumulate elements.
+
+//const HOW_MANY = 10;
+
+var num = $('#container').val();
+var HOW_MANY = Number(num);
+
+
+$('#container').replaceWith(
+  $('<select/>', { id: 'selection' }).html(
+  	$.map(Array(HOW_MANY), function(o,i) {
+      i++;	// because array indices run from 0
+  		return $('<option/>', { value: i }).text(i);
+		}) // map
+  ) // <select/>
+);
+
+

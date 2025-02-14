@@ -1,0 +1,54 @@
+
+
+https://stackoverflow.com/questions/24760771/how-to-increase-a-counter-variable-after-a-callback-of-a-settimeout-function
+
+
+http://jsfiddle.net/robschmuecker/c2C6U/3/
+
+
+
+
+<div class="percentage"></div>
+<br>
+<div id="upload_submit">Upload now</div>
+
+
+
+
+
+var perc = 0;
+var fileCounter = 0;
+
+$('#upload_submit').click(function () {
+    timeout();
+});
+
+
+function timeout() {
+
+    setTimeout(function () {
+        if (perc == 0) {
+            $('.percentage').eq(fileCounter).append("0%");
+        }
+
+        if (perc <= 99) {
+            perc = perc + 1;
+            
+            //$('progress').eq(fileCounter).val(perc);
+            
+            $('.percentage').eq(fileCounter).html(perc);
+            
+            if(perc==5){
+            	return false;
+            }
+            
+        } else {
+            fileCounter++;
+            perc = 0;
+        }
+        timeout();
+        
+    }, 1000);
+}
+
+

@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reload/Refresh a Page in jQuery</title>
+    <script type="text/javascript"
+        src="http://code.jquery.com/jquery-latest.js">
+    </script>
+ 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#Button1').click(function() {
+                location.reload();
+            });
+        });     
+    </script>
+</head>
+<body>
+    <input id="Button1" type="button" value="button" />
+</body>
+</html>

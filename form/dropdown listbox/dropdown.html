@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<script language="javascript">
+
+$(document).ready(function(){
+  
+  $("#list1").change(function(){
+    
+    $("#list2").attr('disabled', 'disabled');
+    
+  });
+  
+});
+
+</script>
+
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <p>
+    <select name="list1" id="list1">
+      <option value="qwe">qwe</option>
+      <option value="asd">asd</option>
+      <option value="zxc">zxc</option>
+    </select>
+</p>
+  <p>
+    <select name="list2" id="list2">
+      <option value="qwe">qwe</option>
+      <option value="asd">asd</option>
+      <option value="zxc">zxc</option>
+    </select>
+  </p>
+  <p>&nbsp;  </p>
+</form>
+</body>
+</html>

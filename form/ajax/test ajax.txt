@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <script src="https://iprint.ad-stg.com/wp-includes/js/jquery/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+    <button class="abc">Click me</button> 
+    
+
+<script type="text/javascript">
+
+ jQuery(document).ready(function($) {
+   
+    
+  $("button").click(function() {
+        //alert(123);
+    $.ajax({
+     	url: "https://api.inhouseprint.com.au/api/AllProducts?ProductREF=INHPCOR",
+               // crossDomain: true,
+        		//contentType: "application/json;",
+            	cache: false,
+               success: function(result) {
+                alert("Data: " + result);
+            },
+       
+        
+    });
+  });
+
+     
+});
+</script>
+</body>
+</html>
+

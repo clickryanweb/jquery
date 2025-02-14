@@ -1,0 +1,194 @@
+
+What is jQuery Event?
+It is the part where the effects or functions of a jQuery triggers after a certain condition was met, this can be done in different ways such as clicking, focusing, blurring, etc. Now a day, Web designers consider using the right jQuery events for a particular jQuery effects and functions, in this way the effects and functions would only happen if a certain element was triggered, eg. Pop-up box appear on clicking a log in button, a window toggles down after mouse hovering it.
+Well, these are a list of well known 10 jQuery events that are often used to trigger a jQuery function or animation.
+
+
+
+
+1. CLICK
+Yes you’ve read it right; a click event. It occurs when a user click an element that has a function to be done when it’s clicked.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5	$(document).ready(function(){
+    $("button").click(function(){
+        $("p").slideToggle();
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_click
+
+
+
+
+
+2. MOUSE OVER
+When assigned to an element. It’ll trigger its function when a user mouse over it.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5
+6
+7
+8	$(document).ready(function(){
+    $("p").mouseover(function(){
+        $("p").css("background-color","yellow");
+    });
+    $("p").mouseout(function(){
+        $("p").css("background-color","#E9E9E4");
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseover_mouseout
+
+
+
+
+3. READY
+This occurs when the DOM (document object model) is properly loaded as well as the web page. In this way, a function would be ready only if the webpage successfully loaded the element, this could prevent errors too.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5	$(document).ready(function(){
+    $("button").click(function(){
+        $("p").slideToggle();
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_ready
+4. FOCUS
+When an element was focused it will trigger its assigned function.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5
+6
+7
+8	$(document).ready(function(){
+    $("input").focus(function(){
+        $("input").css("background-color","#FFFFCC");
+    });
+    $("input").blur(function(){
+        $("input").css("background-color","#D6D6FF");
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_focus_blur
+5. BLUR
+Triggers function when an element loses its focus.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5
+6
+7
+8	$(document).ready(function(){
+    $("input").focus(function(){
+        $("input").css("background-color","#FFFFCC");
+    });
+    $("input").blur(function(){
+        $("input").css("background-color","#D6D6FF");
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_focus_blur
+6. KEYPRESS
+Triggers function from an element when a user pressed certain assigned keys for it.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5	$(document).ready(function(){
+    $("input").keypress(function(){
+        $("span").text(i+=1);
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_keypress
+7. RESIZE
+This occurs when browser’s window was resized.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5	$(document).ready(function(){
+    $(window).resize(function() {
+        $("span").text(x+=1);
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_resize
+8. ERROR
+Triggers when an element fails to do its main purpose. Can be used to display a text that simply tells a user that there is an error occurred.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5
+6
+7
+8	$(document).ready(function(){
+    $("img").error(function(){
+        $("img").replaceWith("<p>Error loading image!</p>");
+    });
+    $("button").click(function(){
+        $("img").error();
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_error_trigger
+9. BIND
+A simple jQuery event that binds one or more function within an element.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5	$(document).ready(function(){
+    $("button").bind("click",function(){
+        $("p").slideToggle();
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_bind
+10. MOUSE MOVE
+This occurs when the mouse pointer moves within a specified element. Identical to mouse over event but it uses the moment when a pointer moves pixel by pixel within an element, so be careful of using this.
+EXAMPLE:
+double click code to edit/copy
+1
+2
+3
+4
+5	$(document).ready(function(){
+    $(document).mousemove(function(e){
+        $("span").text(e.pageX + ", " + e.pageY);
+    });
+});
+LIVE DEMO:
+http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mousemove
+
+
+

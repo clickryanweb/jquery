@@ -1,0 +1,18 @@
+
+
+function randomCharacters() {
+    var characterNumber = 0;
+    var hoverClass = '-hover-'
+    $('.our-range-carousel .product-image-container').mouseover(function() {
+        if(characterNumber >= 5) {
+            characterNumber = 0;
+        }
+        characterNumber++
+        $(this).addClass(hoverClass + characterNumber);
+    });
+    $('.our-range-carousel .product-image-container').mouseout(function() {
+        $(this).removeClass(hoverClass + characterNumber);
+    });
+}
+
+

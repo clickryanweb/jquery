@@ -1,0 +1,39 @@
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $("#button").click(function(){
+    //
+  });
+
+});
+</script>
+
+
+
+//As an HTTP redirect (back button will not work )
+window.location.replace("http://www.google.com");
+
+//like if you click on a link (it will be saved in the session history, 
+//so the back button will work as expected)
+window.location.href = "http://www.google.com";
+
+
+
+
+---left and right click----------------------------------
+
+https://stackoverflow.com/questions/1206203/how-to-distinguish-between-left-and-right-mouse-click-with-jquery
+
+$("body").on({
+    click: function(){alert("left click");},
+    contextmenu: function(){alert("right click");}   
+});
+
+
+
+
+
+
+
+

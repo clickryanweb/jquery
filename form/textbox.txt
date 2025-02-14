@@ -1,0 +1,15 @@
+//disable textbox...
+
+$('#inputId').attr('readonly', true);
+
+
+
+
+//disable textbox 2...
+
+
+$(document).ready(function(){
+      $("#txtName").focus(function () {
+             $(this).blur();
+      });
+   });

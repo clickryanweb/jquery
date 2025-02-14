@@ -1,0 +1,12 @@
+
+
+
+http://www.tutorials2learn.com/tutorials/scripts/jquery/set-select-box-options-jquery.html
+
+
+var arg ='option Text';
+ $('#selectBox > option').each(function(){
+ 	if($(this).text()==arg) $(this).parent('select').val($(this).val())
+ })
+
+

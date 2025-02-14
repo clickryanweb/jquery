@@ -1,0 +1,52 @@
+
+
+http://jsfiddle.net/M5rvh/286/
+
+
+<form id="form">
+    <input type="text" name="name" placeholder="Name" />
+    
+    <input type="submit" value="Send" />
+</form>
+
+
+
+jQuery( document ).ready(function( $ ) {
+    
+    var mathenticate = {
+        bounds: {
+            lower: 5,
+            upper: 50
+        },
+        first: 0,
+        second: 0,
+        generate: function()
+        {
+            this.first = Math.floor(Math.random() * this.bounds.lower) + 1;
+            this.second = Math.floor(Math.random() * this.bounds.upper) + 1;
+        },
+        show: function()
+        {
+            return this.first + ' + ' + this.second;
+        },
+        solve: function()
+        {
+            return this.first + this.second;
+        }
+    };
+    mathenticate.generate();
+   
+    var $auth = $('<input type="text" name="auth" />');
+    $auth
+        .attr('placeholder', 'What is ' + mathenticate.show() + ' = ?')
+        .insertAfter('input[name="name"]');
+    
+    $('#form').on('submit', function(e){
+        e.preventDefault();
+        if( $auth.val() != mathenticate.solve() )
+        {
+            alert('wrong answer!');
+        }
+    });
+    
+});

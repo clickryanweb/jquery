@@ -1,0 +1,9 @@
+// Checkbox checked and input disbaled when page loads
+$('#checkbox').prop('checked', true);
+
+
+if($('#checkbox').prop('checked', true)){
+	alert('...');
+
+}
+

@@ -1,0 +1,52 @@
+
+
+//encr
+
+    
+    $thepval = $main_users3->Link1->GetValue();
+    
+    if(!empty($thepval)){
+    	
+    	
+    	$main_users3->Link1->SetLink("?p=F8eTezlnv&prof=".CCEncryptString($thepval, $_SESSION['key']));
+    //	$main_users3->Link1->SetValue("");
+    	
+    }
+
+
+
+
+//decr
+
+
+   
+   //student...
+   if(!empty($_GET['prof'])){  
+    
+	    $prof = CCDecryptString($_GET['prof'], $_SESSION['key']);
+		
+		//test...    
+	    //echo 
+	    //die();
+	
+		$_SESSION['prof']=$prof;
+    
+   } else{
+   
+	     $_SESSION['prof']=$_SESSION['UserID'];
+   
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

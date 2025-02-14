@@ -1,0 +1,17 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<a id="test1" href="javascript:alert('test1')">TEST1</a>
+<a id="test2" href="javascript:alert('test2')"><span>TEST2</span></a>
+<input type="button" name="qwe" id="qwe" value="qwe" onclick="javascript:alert('qwe')">
+
+<script>
+$(document).ready(function(){
+
+//$('#test2 span').trigger('click'); // Also Works
+
+$('#qwe').trigger('click');
+
+	});
+</script>
+

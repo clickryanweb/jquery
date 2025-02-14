@@ -1,0 +1,6 @@
+$("#somediv").html("<iframe id=myframe src=myform2.aspx?officer_id="+ sPage +" frameborder=0 scrolling=no></iframe>");
+
+or
+
+
+//$("#somediv").load("myform2.aspx?officer_id="+ sPage);

@@ -1,0 +1,14 @@
+
+
+https://stackoverflow.com/questions/29551093/using-each-method-to-validate-form-fields-in-jquery
+
+
+$(".analyze").click(function() {
+$(".required").each(function() {
+    if ($(this).val() === "") {
+        $(this).parents("td").addClass("redClass");
+        alert("Looks like some of the fields aren't filled out correctly.  They're highlighted in red.");
+    }
+});
+});
+

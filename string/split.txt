@@ -1,0 +1,4 @@
+var str = 'something -- something_else';
+var substr = str.split(' -- ');
+// substr[0] contains "something"
+// substr[1] contains "something_else"

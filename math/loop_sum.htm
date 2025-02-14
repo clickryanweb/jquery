@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $(".qwe").blur(function(){
+  
+  //serial...
+  var asd=0;
+  //calc
+  var iop =0;
+    $(".qwe").each(function(){
+      //alert($(this).text())
+	  
+	  asd += parseInt($(".qwe").val());
+	   
+	   iop += parseInt($("#zxc"+asd).val());
+    });
+ alert(iop);
+  });
+  
+});
+</script>
+</head>
+<body>
+<button>Alert the value of each list item</button>
+
+<input type="text" value="1" class="qwe" id="zxc1">
+<input type="text" value="2" class="qwe" id="zxc2">
+<input type="text" value="3" class="qwe" id="zxc3">
+
+</body>
+</html>

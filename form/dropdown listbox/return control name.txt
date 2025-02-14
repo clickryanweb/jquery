@@ -1,0 +1,13 @@
+ $(".mybrand").change(function () {
+                
+				//var id=$(this).val();
+
+				var id2=$(this).attr('name');
+
+				//var mySelect = $('select[name="' + name + '"] option:selected').val();
+
+                alert(id2);
+                
+          
+                
+        });// end function...

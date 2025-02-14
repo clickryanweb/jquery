@@ -1,0 +1,26 @@
+
+
+https://stackoverflow.com/questions/5122402/uppercase-first-letter-of-variable
+
+
+
+    str = jQuery("#acf-field_62755f05a28d1").val();
+
+    if(str){
+        str = str.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+            return letter.toUpperCase();
+        });
+        jQuery("#acf-field_62755f05a28d1").val(str);
+    }
+
+
+///
+
+    str2 = jQuery("#acf-field_62755f0fa28d2").val();
+
+    if(str2){
+        str2 = str2.toLowerCase().replace(/\b[a-z]/g, function(letter2) {
+            return letter2.toUpperCase();
+        });
+        jQuery("#acf-field_62755f0fa28d2").val(str2);
+    }

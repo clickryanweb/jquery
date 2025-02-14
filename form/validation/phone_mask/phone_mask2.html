@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+
+
+
+
+    <input id="themobile" placeholder="(852)1234-1234" name="themobile" maxlength="25" type="text" />
+
+<br />
+
+ <input id="thechk" type="text" maxlength="1" value="0"/>
+
+ <br />
+
+<input type="submit" value="Send Email" id="thebtn" autocomplete="off">
+
+
+
+
+
+
+ <script type="text/javascript">
+ 	jQuery(function ($) {
+
+      $("#thebtn").click(function() {
+
+            if($('#themobile').val().length >= 8){
+                $('#thechk').val('1');
+            }else{
+                $('#thechk').val('0');
+                alert('Please complete the mobile number');
+                return false;
+            }
+
+         }); 
+
+
+$('#themobile').bind('change', function(){
+    telephone_user = $('#themobile').val().replace(/[^0-9]/g, '');
+    telephone_user_regex = telephone_user.replace(/(\d{3})(\d{4})(\d{4})(\d{0,5})/, "$1-$2-$3 $4");
+
+    $('#themobile').val(telephone_user_regex);
+});
+
+          
+
+});
+ </script>
+	
+
+
+
+    </body>
+	</html>

@@ -1,0 +1,29 @@
+ var image = canvas.toDataURL();
+
+              image = image.replace('data:image/png;base64,', '');
+
+              $.ajax({
+
+                                        type: 'POST',
+                                        
+                                        url: 'imgload.aspx/UploadImage',
+                                        
+                                        data: '{ "imageData" : "' + image + '" }',
+                                        
+                                        contentType: 'application/json; charset=utf-8',
+                                        
+                                        dataType: 'json',
+                                        cache: false,
+                                                                       enctype: 'multipart/form-data',
+                                                                       processData: false,
+
+                 success: function (msg) {
+
+                      alert('Image saved successfully !');
+
+                },
+                                    failure: function (errMsg) {
+                                        alert(errMsg);
+                                    }
+
+            });

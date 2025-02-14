@@ -1,0 +1,19 @@
+
+
+http://jsfiddle.net/ult_combo/NubSF/
+
+
+
+<select id="myListBox">
+    <option>Apple</option>
+    <option>Pineapple</option>
+</select><br />
+<button>Change current selected option's text to banana</button>
+
+
+
+$('button').on('click', function () {
+    $('#myListBox option:selected').text('Banana');
+});
+
+

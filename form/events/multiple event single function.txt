@@ -1,0 +1,12 @@
+
+
+
+	$(".myqty").on('blur', mycalc);
+	
+
+
+function mycalc(event){
+
+	//codes...
+
+}

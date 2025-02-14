@@ -1,0 +1,27 @@
+var select = document.getElementById("DropList");
+var length = select.options.length;
+for (i = 0; i < length; i++) {
+  select.options[i] = null;
+}
+
+
+//////////////////////////////////
+
+
+    $('#tblPaysmartAction1_ctl00_Button_Insert').bind('mouseover mouseout', function() {
+            if($("#tblPaysmartAction1_ctl00_hidcustid").val()==""){
+                    $("#tblPaysmartAction1_ctl00_ClientID").val("");
+                }
+    });
+
+
+
+
+
+https://stackoverflow.com/questions/11294554/how-to-clear-or-empty-list-box-using-jquery-on-dropdown-event-change/11294631
+
+
+$("#lstCodelist").empty()
+$("#lbxSelectedItems").empty()
+
+

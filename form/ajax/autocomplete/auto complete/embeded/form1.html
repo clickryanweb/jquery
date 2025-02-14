@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title>Request for Dealer Support (RDS)</title>
+
+
+
+<link rel="stylesheet" type="text/css" href="styles/jquery-ui.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+
+
+</head>
+
+
+
+
+
+
+<script>itemcodes=['123,qwe', 'dwed&555', 'dededsasa', 'FP-07KHP060', 'FP-07KHPSWCCARX01TEXPXC', 'FP-07KHPSWCCARX02TEXPXC', 'FP-07KHPSWCCARX03TEXPXC', 'FP-07KHPSWCCARX05TKXPXC', 'FP-07KHPSWCCARX05TLXPXC', 'FP-07KHPSWCCARX05TMXPXC', 'FP-07KHPSWCCARX15TEXPXC', 'FP-07KHPSWCCARX75TKXPXC', 'FP-07KHPSWCCARX75TMXPXC', 'FP-07KHPSWCCARZ03TEXPXC', 'FP-10UKV-E', 'FP-13UKV-E', 'FP-31CSA1203D', 'FP-31CSB1203D', 'FP-38AK-CDUCARX15TKXPXC', 'FP-38AK-CDUCARX15TLXPXC', 'FP-38AK-CDUCARX15TMXPXC', 'FP-38AK-CDUCARX20TKXPXC', 'FP-38AK-CDUCARX20TLXPXC', 'FP-38AKSCDUCARX15TLXPXC', 'FP-38AKSCDUCARX20TKXPXC', 'FP-38AKSCDUCARX20TLXPXC', 'FP-38AKSCDUCARX25TKXPXC', 'FP-38AKSCDUCARX25TLXPXC', 'FP-38AKSCDUCARX30TKXPXC', 'FP-38AKSCDUCARX30TLXPXC', 'FP-38AKSCDUCARX40TKXPXC', 'FP-38ASB240BA', 'FP-38ASB360BA', 'FP-38ASB600DA', 'FP-38ASB600DB', 'FP-38ASB600DC', 'FP-38ASBCDUCARX02TEXPXC', 'FP-38ASBCDUCARX02TEXPXC1', 'FP-38ASBCDUCARX03TEXPXC', 'FP-38ASBCDUCARX03TEXPXC1', 'FP-38ASBCDUCARX05TKXPXC', 'FP-38ASBCDUCARX05TLXPXC', 'FP-38ASBCDUCARX05TMXPXC', 'FP-38ASBCDUCARZ03TEXPXC', 'FP-38CIV009308', 'FP-38CIV012308', 'FP-38CIV018308', 'FP-38CIV022308', 'FP-38CP-CDUCARX16KEXKXC', 'FP-38CP-CDUCARX21KEXKXC', 'FP-38CVSR010-703', 'FP-38CVSR013-703', 'FP-38CVSR016-703', 'FP-38CVSR022-703', 'FP-38EXP009', 'FP-38EXP020', 'FP-38EXP026', 'FP-38EXPCDUCARX09KEXKXC', 'FP-38EXPCDUCARX13KEXKXC', 'FP-38EXPCDUCARX20KEXKXC', 'FP-38EXPCDUCARX26KEXKXC', 'FP-38GHPCDUCARM25TEXP2C', 'FP-38HDS012', 'FP-38HDS012D', 'FP-38HDS012P', 'FP-38HDSCDUCARC10TKXPPC', 'FP-38HDSCDUCARC10TLXPPC', 'FP-38HDSCDUCARC10TMXPPC', 'FP-38HDSCDUCARC75TKXPPC', 'FP-38HDSCDUCARC75TLXPPC', 'FP-38HDSCDUCARC75TMXPPC', 'FP-38HDSCDUCARD10TKXPPC', 'FP-38HDSCDUCARD10TLXPPC' ];
+
+</script>
+
+<body>
+
+
+
+<form name="ctl00" method="post" action="addl_discount.aspx?dealer_series=4&amp;app_month=2&amp;app_month2=7&amp;zxczxc=2248&amp;iopiop=CGRWA0011&amp;ptype=2&amp;is_rds_flg=" id="ctl00">
+Item code: 
+<input name="tbl_rds_addlinesRepeater$ctl01$tbl_rds_addlinesmyitem" type="text" value="" size="25" id="tbl_rds_addlinesRepeater_ctl01_tbl_rds_addlinesmyitem" style="WIDTH: 177px; HEIGHT: 19px" />
+
+
+</form>
+
+
+
+
+
+<script type=text/javascript>
+
+$(document).ready(function(){
+
+	$('#tbl_rds_addlinesRepeater_ctl01_tbl_rds_addlinesmyitem').autocomplete({
+		source:itemcodes,
+
+		 select: function( event, ui ) {
+
+		 	
+                 var selectedObj = ui.item; 
+
+                 var theselect = ui.item.value;
+
+                 var probid = theselect.charAt(3)
+
+                 alert(probid);
+
+                $("#TextBox1").val(ui.item.value);
+                $("#TextBox1").focus();
+        	 	
+        	 //hide...
+        	 	$("textbox1").css("visibility:none");
+                //return false;
+ }   
+	});
+
+});
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+
+
+	$("#NewRecord1Button_Insert").click(function(){
+	 		   var id=$("#NewRecord1ListBox1").val();
+                var dataString = id;
+                alert(dataString);
+				return false;
+
+	  });

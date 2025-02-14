@@ -1,0 +1,11 @@
+
+
+https://stackoverflow.com/questions/9709209/html-select-only-one-checkbox-in-a-group
+
+
+  $('input.one').on('change', function() {
+        var name = $(this).attr('name');
+        $('input[name='+name+'].one').not(this).prop('checked', false);
+    }); 
+
+

@@ -1,0 +1,15 @@
+$(document).ready(function(){
+
+$("#refresh").click(function(){
+
+$.ajaxSetup ({
+    // Disable caching of AJAX responses
+    cache: false
+});
+
+
+	$('#mylist').load('newpage1.aspx');
+
+
+});
+}); 

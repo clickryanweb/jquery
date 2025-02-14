@@ -1,0 +1,35 @@
+$("#invest_amount").keyup(function() {
+  $('#fee').val(parseFloat($('#invest_amount').val()) * .035);
+});
+
+or...
+
+$("#invest_amount").keyup(function() {
+  $('#fee').val(+$('#invest_amount').val() * .035);
+});
+
+//.val() returns a string, so you need to use + or praseFloat() to convert it to a number first
+
+
+//////////////////////
+
+
+var value = parseFloat($('#invest_amount').val());
+if (!isNaN(value)) {
+    $('#fee').val(value * 0.035);
+} else {
+    alert('The entered value is not a valid number');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

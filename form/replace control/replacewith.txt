@@ -1,0 +1,9 @@
+
+
+
+        if ((this.value) == 0) {
+                $(this).replaceWith($('<textarea/>',{'class':'thetxta','id':this.id, 'name':this.name})); 
+        }
+
+
+

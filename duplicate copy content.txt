@@ -1,0 +1,49 @@
+
+
+
+https://stackoverflow.com/questions/16068047/jquery-duplicate-div-into-another-div/32880939
+
+https://www.nicesnippets.com/blog/how-to-copy-contents-of-a-div-into-another-div
+
+
+var copyContent = $('.newsletter.thenewsletter[data-section-id="featured-collections"]').clone();
+$('.parent-div').append(copyContent);
+
+
+//working with forms...
+
+$('.newsletter.thenewsletter[data-section-id="featured-collections"]').clone().appendTo('.newsletter-popup');
+
+
+
+//not working w/ forms...
+
+var $button = $('.newsletter.thenewsletter[data-section-id="featured-collections"]').clone();
+$('.newsletter-popup').html($button);
+
+
+
+
+
+<div class="newsletter-popup">
+</div>
+
+
+<script>
+//alert("...");
+setTimeout(
+  function() 
+  {
+    
+$('.newsletter.thenewsletter[data-section-id="featured-collections"]').clone().appendTo('.newsletter-popup');
+
+  }, 4000);
+
+
+
+
+</script>
+
+
+
+

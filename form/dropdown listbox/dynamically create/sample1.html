@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+	#tab1 ul.row.justify-content-between {
+    margin-left: -14px;
+}
+ul.row.justify-content-between {
+}
+ul.row.justify-content-between {
+    padding-right: unset !important;
+    padding-left: 0px !important;
+}
+
+.justify-content-between {
+    -ms-flex-pack: justify!important;
+    justify-content: space-between!important;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+li.col-12.col-xl-4 {
+    list-style: none;
+}
+
+@media (min-width: 1200px){
+ .col-xl-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+} 
+  
+}
+
+</style>
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+</head>
+<body>
+
+
+<button id="generate">Generate</button>
+
+
+<ul class="row justify-content-between">
+</ul>
+    
+
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+
+  $('#generate').click(function() {
+  
+  
+    var values = ["dog", "cat", "parrot", "rabbit"];
+
+    var select = $('<select>').prop('id', 'theopt').prop('name', 'theopt');
+
+
+    $(values).each(function() {
+      select.append($("<option>")
+        .prop('value', this)
+        .text(this.charAt(0).toUpperCase() + this.slice(1)));
+    });
+
+
+    var thestart = $("<li class='col-12 col-xl-4'>").prop('for', 'theopt').text(" ");
+
+    var theEnd = $("</li>");
+
+
+    $('ul.row.justify-content-between').append(thestart).append(select).append(theEnd);
+    
+    
+  })
+  
+  
+});
+
+
+</script>    
+
+</body>
+</html>

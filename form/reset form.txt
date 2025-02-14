@@ -1,0 +1,3 @@
+$('#configreset').click(function(){
+        $('#configform')[0].reset();
+  });

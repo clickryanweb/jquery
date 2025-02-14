@@ -1,0 +1,57 @@
+
+
+
+https://stackoverflow.com/questions/40470056/how-to-append-option-to-a-select
+
+
+
+var total = 10;
+for (var i = 1; i <= total; i++) {
+  var added = document.createElement('option');
+  var select1 = $('#main');
+  added.value = i;
+  added.innerHTML = i;
+  select1.append(added);
+}
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<select id="main">
+  <option selected>1</option>
+</select>
+
+
+
+
+-----
+
+
+<input id="theqty" name="theqty" class="form-control" placeholder="Amount" type="number" step="1" min="1" max="" inputmode="numeric" value="1">
+
+<select id="main">
+  <option selected>1</option>
+</select>
+
+
+
+    $("input#theqty").change(function() {
+
+			var total = $(this).val();
+      
+
+   $("#main").empty();
+   
+        
+        for (var i = 1; i <= total; i++) {
+          var added = document.createElement('option');
+          var select1 = $('#main');
+          added.value = i;
+          added.innerHTML = i;
+          select1.append(added);
+        }
+
+    });
+    
+
+

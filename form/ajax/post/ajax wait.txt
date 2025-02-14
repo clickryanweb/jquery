@@ -1,0 +1,10 @@
+
+
+https://stackoverflow.com/questions/755885/how-do-i-make-jquery-wait-for-an-ajax-call-to-finish-before-it-returns
+
+
+https://stackoverflow.com/questions/12615169/is-there-any-way-to-wait-for-ajax-response-and-halt-execution/12615282
+
+
+
+

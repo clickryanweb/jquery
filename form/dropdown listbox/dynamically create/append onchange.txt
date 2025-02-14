@@ -1,0 +1,27 @@
+
+
+https://stackoverflow.com/questions/24999314/adding-onchange-function-dynamically-while-appending
+
+
+
+
+                       var theobj = thecats[i].replace(" ", "");
+                        var thestart = "<li class='col-12 col-xl-4 lst"+ theobj +"'>";
+                        prepoption = "<option selected> Select " + theobj + "</option>" + prepoption;
+
+                        //alert(thestart);
+                        $('ul.row.justify-content-between.form-row').append(thestart);
+
+                        var selectBox = $('<select/>')
+                            .prop('name', theobj)
+                            .prop('id', theobj)
+                            .on('change', function () {
+                                chksize(this.value);
+                        });
+                        
+                        $('.lst'+ theobj).append(selectBox);
+                        $('select#Size').append(prepoption);
+
+
+
+

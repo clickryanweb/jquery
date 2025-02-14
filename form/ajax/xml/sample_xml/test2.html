@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extract and Read XML Data Using jQuery and Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <style>
+        #books {
+            font:12px Arial;
+            width:500px;
+            text-align:center;
+            overflow:hidden;
+        }
+        #books div  {
+            width:auto;
+            text-align:left;
+            margin:1px;
+            padding:2px 5px;
+            letter-spacing:1px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Click the button to extract data from an XML file and display!</p>
+
+    <input type="button" value="Click it!" id="bt" />
+
+
+<select id="Size" name="type" class="form-control">
+         <option value="logo">Size</option>
+      </select>
+
+    <div id="books"></div>
+</body>
+
+<script>
+    $(document).ready(function() {
+
+        $('#bt').click(function () {
+            $('#books').empty();       // Clear the DIV.
+
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost/inhouseprinting2/wp-content/sample_xml/library.xml',           // The file path.
+                dataType: 'xml',    
+                success: function(xml) {
+                    $(xml).find('List').each(function() {
+                        
+                        // Append new data to the DIV element.
+                        $('#Size option').eq(0).after(
+                            '<option value="'+ $(this).find('Price').text() +'">'+ $(this).find('BookName').text() + '</option>');
+                    });
+                }
+            });
+        });
+
+
+        ///
+
+
+        //$('#Size').append('<option value="5">item 5</option>'); // adds item 5 at the end
+        //$('#Size option').eq(0).after('<option value="new">new</option>'); // add new at the second position.
+
+
+    });
+</script>
+</html>

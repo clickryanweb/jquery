@@ -1,0 +1,14 @@
+
+
+
+https://www.encodedna.com/2014/07/extract-and-read-data-from-xml-using-jquery-ajax.htm
+
+
+
+
+
+https://www.encodedna.com/javascript/practice-ground/default.htm?pg=read_xml_data_using_jquery_ajax
+
+
+
+

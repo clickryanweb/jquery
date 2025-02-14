@@ -1,0 +1,60 @@
+<html>
+<body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+Client: 
+<select id="name" name="name">
+<option value="" selected="selected">Please select...</option>
+<option value="1" >Elvis</option>
+<option value="2" >Frank</option>
+</select>
+
+<script>
+$(document).ready(function()
+{
+   $("#name").change(function(){
+                
+		//$(".Controls2").show();
+                var id=$(this).val();
+				var myurl = "http://localhost/test1/qwe.php?myclient="+id;
+                //var dataString = ''+ id;
+                alert(myurl);
+
+                //ajax...
+  		 $.ajax
+                ({
+                
+                        //url: "../../services/ajax_carmodel.php?",
+						type: "GET",
+						url: myurl,
+                        //data: JSON.stringify(dataString),
+                        contentType: "application/json; charset=utf-8",
+                        cache: false,
+                        success: function(data)
+                        {
+  
+						//  alert(data);
+						
+						
+							
+								var dd = JSON.parse(data);
+								alert(dd.pdesc);
+						
+					
+						  
+                        } 
+                }); //end ajax...
+
+                
+        });// end function...
+
+
+        }); //jquery document...
+
+
+</script>
+
+</body>
+</html>
+
+

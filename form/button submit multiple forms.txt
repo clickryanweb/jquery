@@ -1,0 +1,11 @@
+
+
+<input type="button" id="Button1" name="Button1" value="Button1">
+
+
+
+$('#Button1').on('click',function(){
+ 
+	$('#ContentPanel1client_goal_mapButton_Submit, #ContentPanel1client_goal_teamButton_Submit').trigger('click');
+
+});  

@@ -1,0 +1,24 @@
+
+<script type="text/javascript" src="../js/jquery-1.7.2.js"></script>
+
+
+<form method='post' name='myform' action='./../../phpBB3/ucp.php?mode=login&t=<?php echo $t ?>' class='wp_phpbb_bridge_login' id='login'>
+	
+			<label for='username'>Username:</label>&nbsp;<input type='text' value='<?php echo $uname ?>' name='username' id='wpbb_username' size='10' class='inputbox' title='Username' />
+			<label for='password'>Password:</label>&nbsp;<input type='password' value='<?php echo $psword ?>' name='password' id='wpbb_password' size='10' class='inputbox' title='Password' />
+			
+				<br> <label for='autologin'>Log me on automatically each visit <input type='checkbox' name='autologin' id='autologin' /></label>
+			
+			<input type='submit' name='login' value='Login' id='mygo' class='button2' />
+			<input type='hidden' name='redirect' value='./../index.php' />
+ 
+		
+	</form>
+
+
+<script> 
+//var t = setTimeout("document.myform.submit();",3000); //2 seconds measured in miliseconds =2000
+
+$("#mygo").trigger('click');
+
+</script>

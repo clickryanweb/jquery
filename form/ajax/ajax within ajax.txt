@@ -1,0 +1,35 @@
+
+
+function myfunc(){
+ 
+ $.ajax({
+                
+                        type: "GET",
+                        url: "myjson.json",
+                        //data: JSON.stringify(dataString),
+                        contentType: "application/json; charset=utf-8",
+                        cache: false,
+                        dataType: 'json',
+                        success: function(data)
+                        {
+  
+                          //alert(data);
+                        var dd = JSON.parse(JSON.stringify(data));
+                        	//alert(dd.access_token);
+                        	//$('#NewRecord1_ctl00_TextBox1').val(dd.access_token);
+                                   
+                                    $.ajax({
+						                type: "post",
+						                url: "psvcs/gen_token.aspx",
+						                data: 'myt=' + dd,
+						                success: function (data) {
+						
+						                }
+						            });     
+                                                  
+                        } 
+      }); //end ajax...
+
+}
+
+

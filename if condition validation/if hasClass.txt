@@ -1,0 +1,19 @@
+
+
+https://stackoverflow.com/questions/4565075/jquery-if-element-has-class-do-this
+
+
+   //events...
+    $('#acf-group_621683d975c7f button.handlediv').click(function(){
+        //
+        let theobj = $("div#acf-group_621683d975c7f");
+
+        if (theobj.hasClass("closed")) {
+            theobj.removeClass('closed');
+          }else{
+            theobj.addClass('closed');
+          }
+        
+      });
+
+

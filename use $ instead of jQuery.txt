@@ -1,0 +1,13 @@
+
+
+https://stackoverflow.com/questions/6635600/jquery-how-can-i-use-instead-of-jquery
+
+
+(function($) {
+    // here $ would be point to jQuery object
+    $(document).ready(function() {
+        $('#pass').keyup( ... );
+    });
+})(jQuery);
+
+

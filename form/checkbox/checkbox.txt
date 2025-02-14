@@ -1,0 +1,25 @@
+
+
+$('#tbl_rds_addlinesRepeater_ctl00_tbl_rds_addlinesCheckBox1').click (function ()
+{
+	var thisCheck = $(this);
+	
+	if (thischeck.is (':checked'))
+	{
+		// Do stuff
+	}
+});
+
+
+//////////////////////////
+
+
+$('input[type="checkbox"]').click(function(){
+            if($(this).prop("checked") == true){
+                alert("Checkbox is checked.");
+            }
+            else if($(this).prop("checked") == false){
+                alert("Checkbox is unchecked.");
+            }
+        });
+

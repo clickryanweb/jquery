@@ -1,0 +1,61 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><HTML 
+xmlns="http://www.w3.org/1999/xhtml"><HEAD>
+<META content="text/html; charset=utf-8" http-equiv="Content-Type">
+<TITLE>Untitled Document</TITLE>
+<SCRIPT type="text/javascript" src="checkbox_files/jquery.js"></SCRIPT>
+
+<META name="GENERATOR" content="MSHTML 9.00.8112.16450"></HEAD>
+<BODY>
+<SCRIPT type="text/javascript">
+    $(document).ready(function() {
+        $('input[name=Q1]').click(function() {
+        var groupName = $(this).attr('name');
+
+           
+				
+				$("#textfield").val($("input[name='Q1']:checked").val());
+				
+        });
+		
+		
+			 $('input[name=Q2]').click(function() {
+        var groupName = $(this).attr('name');
+
+           
+				
+				$("#textfield2").val($("input[name='Q2']:checked").val());
+				
+        });
+		
+		
+
+    });
+	
+	
+	
+
+</SCRIPT>
+
+
+
+
+
+<form id="form1" name="form1" method="post" action="">
+<input name="Q1" value="1" type="radio">Unsatisfactory </font><input name="Q1" value="2" type="radio">Poor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><input name="Q1" value="3" type="radio">Fair&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><input name="Q1" value="4" type="radio">Average&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </font><input name="Q1" value="5" type="radio">Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><input name="Q1" value="6" type="radio">Very Good&nbsp;&nbsp;&nbsp; </font><input name="Q1" value="7" checked type="radio">Excellent 
+
+  <input type="text" name="textfield" id="textfield" />
+   <br />
+   <input name="Q2" value="1" type="radio">
+   Unsatisfactory </font><input name="Q2" value="2" type="radio">
+   Poor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><input name="Q2" value="3" type="radio">
+   Fair&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><input name="Q2" value="4" type="radio">
+   Average&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </font><input name="Q2" value="5" type="radio">
+   Good&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><input name="Q2" value="6" type="radio">
+   Very Good&nbsp;&nbsp;&nbsp; </font><input name="Q2" value="7" checked type="radio">
+   Excellent 
+
+   <input type="text" name="textfield2" id="textfield2" /> 
+   
+</form>
+</BODY></HTML>

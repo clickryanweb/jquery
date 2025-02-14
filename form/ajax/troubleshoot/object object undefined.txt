@@ -1,0 +1,29 @@
+
+
+https://stackoverflow.com/questions/38380462/syntaxerror-unexpected-token-o-in-json-at-position-1
+
+
+
+
+  $.ajax({
+
+
+        type: "GET",
+        url: "/inhouseprinting2/api/GetPrice/?ProductREF="+ theprodref +"&Options="+ theoptions1 +"&Options="+ theoptions2 +"&QTY="+ theqty +"&Width="+ thewidth +"&Height="+theheight,
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        cache: false,
+        //dataType: "text",
+        success: function(data) {
+
+          var dd = JSON.parse(JSON.stringify(data));
+          alert(dd.Price);
+
+        
+        }
+
+
+    }); //end ajax...  
+
+
+

@@ -1,0 +1,8 @@
+if(i==2) { //3rd radiobutton
+    		$("#textbox1").attr("disabled", "disabled"); 
+    		$("#checkbox1").attr("disabled", "disabled"); 
+    	}
+    	else {
+    		$("#textbox1").removeAttr("disabled"); 
+    		$("#checkbox1").removeAttr("disabled"); 
+    	}

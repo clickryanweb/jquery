@@ -1,0 +1,5 @@
+//You can use bind to bind a function to multiple events:
+
+$('#element').bind('keyup keypress blur change', function() {
+    ...
+});

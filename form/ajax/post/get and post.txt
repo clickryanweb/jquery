@@ -1,0 +1,37 @@
+
+//get data in json...
+
+
+$.ajax({
+                
+        type: "GET",
+        
+        //url: "myjson.json",
+        url: "https://login.shapept.com.au/admin/psvcs/bearer.php",
+        
+        contentType: "application/json; charset=utf-8",
+        cache: false,
+        dataType: 'json',
+        success: function(data)
+        {
+          
+          //alert(data);
+        var dd = JSON.parse(JSON.stringify(data));
+                //alert(dd.access_token);
+                //$('#NewRecord1_ctl00_TextBox1').val(dd.access_token);
+                   
+           $.ajax({
+                type: "post",
+                url: "mytoken.aspx",
+                data: 'token='+thetok+'&myt=' + dd.access_token,
+                success: function (data) {
+                        //alert(data);
+                        //$('#thetxt').val(dd.access_token);            
+                	}
+        	});   
+
+	} //end success... 
+
+
+}); //end ajax...
+

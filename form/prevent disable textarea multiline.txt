@@ -1,0 +1,27 @@
+$("#area").keypress( function (event) {
+
+    // If the key code is not associated with the ENTER key...
+    if (event.keyCode == 13) {
+
+  
+
+        // Otherwise prevent the default event.
+        event.preventDefault();
+
+        // Get the message value, stripping any newline characters.
+        var msg = $("#area").val().replace("\n", "");
+
+        // If the message is not blank now...
+        if (!util.isBlank(msg)) {
+
+            // ...send the message.
+            send(msg);
+
+            // Clear the text area.
+            $("#area").val("");
+
+        }
+
+    }
+
+} );

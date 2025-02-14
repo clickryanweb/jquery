@@ -1,0 +1,112 @@
+
+
+
+
+<script>
+
+function psmartcust(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26){
+	
+	
+	info = [];
+	info[0] = '';
+	info[1]=a1;
+	info[2]=a2;
+	info[3]=a3;
+	info[4]=a4;
+	info[5]=a5;
+	info[6]=a6;
+	info[7]=a7;
+	info[8]=a8;
+	info[9]=a9;
+	info[10]=a10;
+	info[11]=a11;
+	info[12]=a12;
+	info[13]=a13;
+	info[14]=a14;
+	info[15]=a15;
+	info[16]=a16;
+	info[17]=a17;
+	info[18]=a18;
+	info[19]=a19;
+	info[20]=a20;
+	info[21]=a21;
+	info[22]=a22;
+	info[23]=a23;
+	info[24]=a24;
+	info[25]=a25;
+	info[26]=a26;
+
+
+	
+	
+	 $.ajax({
+                type: "post",
+                url: "psvcs/addcustomer.php",
+                data: {info:info},
+                success: function (data) {
+                        alert(data);
+                        //$('#thetxt').val();              
+                }
+        }); 
+	
+	
+	
+	}
+
+
+</script>
+
+
+
+
+
+////////////////////////////
+
+
+<?php
+
+ini_set("display_errors", 1);
+
+
+$customerReference= $_POST['info']['1'];
+$firstName=$_POST['info']['2'];
+$lastName=$_POST['info']['3'];
+$driversLicense=$_POST['info']['4'];
+$dob=$_POST['info']['5'];
+$address=$_POST['info']['6'];
+$suburb=$_POST['info']['7'];
+$state_region=$_POST['info']['8'];
+$postCode=$_POST['info']['9'];
+$email=$_POST['info']['10'];
+$mobile=$_POST['info']['11'];
+$phoneHome=$_POST['info']['12'];
+$phoneWork=$_POST['info']['13'];
+$agreementType=$_POST['info']['14'];
+$minTerm=$_POST['info']['15'];
+$contractStart=$_POST['info']['16'];
+$billingPeriod=$_POST['info']['17'];
+$firstPayment=$_POST['info']['18'];
+$payment=$_POST['info']['19'];
+$adminFee=$_POST['info']['20'];
+$setupFee=$_POST['info']['21'];
+$customerPaysCardFee=$_POST['info']['22'];
+$accountName=$_POST['info']['23'];
+$accountNumber=$_POST['info']['24'];
+$bsb=$_POST['info']['25'];
+$specialConditions=$_POST['info']['26'];
+
+
+
+	echo $customerReference;
+	die();
+
+
+
+
+
+
+
+
+
+
+

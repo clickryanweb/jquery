@@ -1,0 +1,56 @@
+
+https://stackoverflow.com/questions/14972708/how-to-get-all-selected-option-text-form-multi-select-using-javascript/14973255
+
+
+
+<select  style="width:200px;" class="dropdownCode" >
+    <option value="90">Collection1</option>
+    <option value="91">Collection2</option>
+    <option value="92">Collection3</option>
+    <option value="93">Collection4</option>
+    <option value="94">Collection5</option>
+    <option value="95">Collection6</option>
+</select>
+
+<select  style="width:200px;" class="dropdownCode" >
+    <option value="90">Collection1</option>
+    <option value="91">Collection2</option>
+    <option value="92">Collection3</option>
+    <option value="93">Collection4</option>
+    <option value="94">Collection5</option>
+    <option value="95">Collection6</option>
+</select>
+
+<br/>
+<div>
+  <textarea id="qwe" rows="4" cols="40" readonly></textarea>
+</div>
+
+
+
+
+
+$(".dropdownCode").change(function() {
+
+ $('#qwe').val(' ');
+
+
+     
+		asd="";
+    
+       $(".dropdownCode :selected").each(function (i,sel) {
+     		alert($(sel).text());
+     		
+        asd = asd + $(sel).text() + ", ";
+	
+         $('#qwe').val(asd);
+
+       }); 
+ 
+ 
+});
+
+
+
+
+

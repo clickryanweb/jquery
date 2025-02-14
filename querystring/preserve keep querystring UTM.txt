@@ -1,0 +1,50 @@
+
+sample: https://stgmelbournehr.wpengine.com/?utm_term=ts_nash&hsmemberId=%7b%7b%20contact.hs_object_id%20%7d%7d&utm_campaign=hrsm2023&utm_medium=email&utm_content=followup&utm_source=telesales
+
+
+https://medium.com/@skychew/how-to-pass-utm-tags-from-home-page-to-other-pages-c148d80ef64
+
+
+<script type=”text/javascript”>
+jQuery(document).ready(function ($) {
+$(function() {
+$url = window.location.href;
+$urlSplit = $url.split(“?”);
+$url_parameters = $urlSplit[1];
+
+$(“a”).attr(‘href’, function(i, h) {
+
+if( typeof $url_parameters !== “undefined”) return h + “?” + $url_parameters;
+else return h;
+
+});
+});
+});
+</script>
+
+
+
+
+//try...
+
+https://www.nickclaeboe.com/2016/09/17/carry-pass-variables-page-page-wordpress-google-utm-tags-vars/
+
+
+<?php $utm_source = isset($_GET['utm_source']) ? $_GET['utm_source'] : ""; ?>
+<?php $utm_medium = isset($_GET['utm_medium']) ? $_GET['utm_medium'] : ""; ?>
+<?php $utm_campaign = isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : ""; ?>
+<?php $utm_term = isset($_GET['utm_term']) ? $_GET['utm_term'] : ""; ?>
+<?php $utm_content = isset($_GET['utm_content']) ? $_GET['utm_content'] : ""; ?>
+
+
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+$(function() {
+$("a").attr('href', function(i, h) {
+return h + (h.indexOf('?') != -1 ? "&utm_source=<?php echo $utm_source; ?>&utm_medium=<?php echo $utm_medium; ?>&utm_campaign=<?php echo $utm_campaign; ?>&utm_term=<?php echo $utm_term; ?>&utm_content=<?php echo $utm_content; ?>" : "?utm_source=<?php echo $utm_source; ?>&utm_medium=<?php echo $utm_medium; ?>&utm_campaign=<?php echo $utm_campaign; ?>&utm_term=<?php echo $utm_term; ?>&utm_content=<?php echo $utm_content; ?>");
+});
+});
+});
+</script>
+
+

@@ -1,0 +1,27 @@
+$('#myForm input').on('change', function() {
+
+  //Create array of input values
+  var ar = $('#myForm input').map(function() {
+    if ($(this).val() != '') return $(this).val()
+  }).get();
+
+  //Create array of duplicates if there are any
+  var unique = ar.filter(function(item, pos) {
+    return ar.indexOf(item) != pos;
+  });
+
+  //show/hide error msg
+  (unique.length != 0) ? $('.error').text('duplicate'): $('.error').text('');
+})
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form name="myForm" id="myForm">
+  <input type="number" name="week[]" id="week1">
+  <input type="number" name="week[]" id="week2">
+  <input type="number" name="week[]" id="week3">
+  <input type="number" name="week[]" id="week4">
+</form>
+<div class="error"></div>

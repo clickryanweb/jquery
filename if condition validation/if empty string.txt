@@ -1,0 +1,15 @@
+to ignore white space for strings:
+
+if (!a.trim()) {
+    // is empty or whitespace
+}
+
+
+
+    if ($(this).val() == '') { // check if value changed
+        alert('Empty');
+    }
+
+
+
+

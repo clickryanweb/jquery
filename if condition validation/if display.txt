@@ -1,0 +1,4 @@
+if($('#yourID').css('display') == 'none')
+{
+
+}

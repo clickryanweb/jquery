@@ -1,0 +1,72 @@
+
+
+http://jsfiddle.net/mplungjan/9ZT3s/
+
+
+
+<select id="theevent" name="theevent"> <!-- borough = d_event  -->
+    <option value="">SELECT</option>
+</select>
+
+<select id="enquiry" name="enquiry">  <!-- school = enquiry  -->
+    <option value="">Select</option>										
+</select>
+
+
+
+///
+
+
+
+
+
+var theevent = {
+  1 : {
+    name:"Employment Law Masterclass Alberta",
+    enquiry: [
+        {val:'alberta_gen',name:"General enquiries"},
+        {val:'alberta_sponsor',name:"Sponsorship Opportunities"},
+        {val:'alberta_speaking',name:"Speaking Opprotunities"}
+      ]
+    },
+  2: {
+    name:"Employment Law Masterclass Sydney",
+    enquiry: [
+        {val:'sydney_agenda',name:"Agenda and Logistics Enquiries"},
+        {val:'sydney_speaking',name:"Speaking Enquiries"}
+      ]
+    },
+    3: {
+    name:"Employment Law Masterclass Melbourne",
+    enquiry: [
+        {val:'melbourne_agenda',name:"Agenda and Logistics Enquiries"},
+        {val:'melbourne_speaking',name:"Speaking Enquiries"}
+      ]
+    }
+}
+
+$(function() {
+  $.each(theevent,function(num,theevent) {  
+    $('#theevent').append('<option value="'+num+'">'+theevent.name+'</option>'); 
+  });     
+  
+  $('#theevent').on("change",function() {
+    var br = this.value, $schoolDrop=$("#enquiry")
+    window.console && console.log(br);
+    $("option:gt(0)",$schoolDrop).remove();
+    if (br) {
+      $("option:eq(0)",$schoolDrop).text("Please select for "+theevent[br].name);
+        
+      var enquiry = theevent[br].enquiry;
+      $.each(enquiry,function(_,enquiry) {
+        $schoolDrop.append('<option value="'+enquiry.val+'">'+enquiry.name+'</option>');          
+      });  
+    }    
+    else {
+      $("option:eq(0)",$schoolDrop).text(" Select ");
+      }  
+  });
+});
+    
+
+

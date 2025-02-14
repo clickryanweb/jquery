@@ -1,0 +1,5 @@
+
+Sum of values from different divs with the same class...
+https://stackoverflow.com/questions/7249757/sum-of-values-from-different-divs-with-the-same-class
+
+

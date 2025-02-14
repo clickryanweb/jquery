@@ -1,0 +1,25 @@
+
+
+https://stackoverflow.com/questions/10223865/ajax-jquery-xml-parse
+
+
+//shld be same domain...
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $.ajax({
+        type: "GET",
+        url: "getMembers.php",
+        cache: false,
+        dataType: "xml",
+        success: function(xml) {
+            $(xml).find('name').each(function(){
+                        var name = $(this).text();
+                        alert(name);
+            });
+        }
+    });
+});
+
+

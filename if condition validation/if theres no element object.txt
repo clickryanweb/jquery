@@ -1,0 +1,20 @@
+
+
+http://jsfiddle.net/phillipkregg/d4Cc6/
+
+
+
+<div id="myDiv"> </div>
+
+
+
+
+
+// Do this instead
+if ($("#myDiv").length == 0) {
+    alert("This won't fire because there's no div.");
+    
+}
+
+
+

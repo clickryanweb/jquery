@@ -1,0 +1,15 @@
+
+
+https://stackoverflow.com/questions/2279760/how-to-reset-all-checkboxes-using-jquery-or-pure-js
+
+
+  $('input#story').each(function() { this.checked = true; });
+
+
+    //clear other categories...
+    $('input.thecat').each(function() { this.checked = false; });
+
+
+    $('input[type=checkbox][value='+selval+']').each(function() { this.checked = true; });
+
+

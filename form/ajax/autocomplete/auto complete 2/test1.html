@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title></title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/jquery-ui.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+        .ui-autocomplete-loading { background: white url('LoaderIcon.gif') right center no-repeat; }
+        </style>
+<style>
+        .ui-autocomplete {
+                max-height: 250px;
+                width: 320px;
+                overflow-y: auto;
+                /* prevent horizontal scrollbar */
+                overflow-x: hidden;
+                /* add padding to account for vertical scrollbar */
+                padding-right: 20px;
+        }
+        /* IE 6 doesn't support max-height
+         * we use height instead, but this forces the menu to always be this tall
+         */
+        * html .ui-autocomplete {
+                height: 250px;
+                width: 320px;
+        }
+        </style>
+        
+<script type="text/javascript">
+
+$(document).ready(function(){
+        $("#TextBox1").autocomplete({
+         source: function(request, response) {
+
+        $.ajax({
+         url: "../service/c_test.asp",
+         dataType: 'json',
+         data: {
+         term : request.term,
+         ptype : '1'},
+         success: function(data) {response(data);} }
+         );},
+         minLength: 1,
+
+        select: function( event, ui ) {
+                 var selectedObj = ui.item; 
+                $("#TextBox1").val(ui.item.value);
+                $("#TextBox1").focus();
+        	 	
+        	 //hide...
+        	 	$("textbox1").css("visibility:none");
+                //return false;
+        }      
+ 
+        }); //function
+
+ });
+ 
+ </script>
+</head>
+<body>
+<input style="WIDTH: 360px; HEIGHT: 22px" id="TextBox1" value="" size="49">
+</body>
+</html>

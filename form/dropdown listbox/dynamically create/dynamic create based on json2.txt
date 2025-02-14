@@ -1,0 +1,536 @@
+jQuery(document).ready(function($) {
+
+
+   
+
+
+    ///
+
+    var theprodtype = '0';
+
+    var thesku = $('span.sku_wrapper span.sku').text();
+
+    //alert(thesku);
+
+
+    if (thesku) {
+
+
+        //test...
+
+
+
+
+        ///get productTypeID...
+        $.ajax({
+            type: "GET",
+            
+            //url: "/inhouseprinting2/api/AllProducts/?ProductREF=" + thesku,
+            url: "https://api.inhouseprint.com.au/api/AllProducts?ProductREF=" + thesku,
+
+            //contentType: "application/json; charset=utf-8",
+            cache: false,
+            //dataType: "text",
+            dataType: 'json',
+
+
+            success: function(data) {
+                theprodtype = _.pluck(data, 'ProductTypeID');
+
+
+                alert(theprodtype);
+
+                if (theprodtype == '4') {
+                    $('button#prod_calcprice, input#theqty').css('display', 'none');
+                }
+
+                if (theprodtype == '5') {
+                    $('input#theqty').css('display', 'none');
+                }
+
+              
+            }
+
+
+
+
+        }); //end ajax...
+
+
+
+
+        ///getoptions...
+
+        $.ajax({
+            type: "GET",
+            //url: "/inhouseprinting2/api/GetOptions/?ProductREF=" + thesku,
+            url: "https://api.inhouseprint.com.au/api/GetOptions/?ProductREF=" + thesku,
+
+            //contentType: "application/json; charset=utf-8",
+            cache: false,
+            dataType: "json",
+            success: function(data) {
+
+
+                //data = JSON.stringify(data)
+
+                var thecats = _.pluck(data, 'CatName');
+
+             
+
+                //alert(thecats);
+             
+
+                /// the catgr...
+
+                var thecatsi = [];
+
+
+
+
+                /// the options per category...
+                var thearr = [];
+
+
+
+                var info = {
+                    "theinfo": data
+                };
+
+                var prepoption = "";
+
+                var optid = "";
+
+                var optname = "";
+
+
+                //loop thru categories...
+                for (var i = 0; i < thecats.length; i++) {
+
+
+                    if (thecats[i] != '') {
+
+                        thearr.push(i);
+                        //console.log(thecats[i]);
+
+                         optid = _.pluck(info.theinfo[thearr].AvaliableOptions, 'OptionID');
+
+                         optname = _.pluck(info.theinfo[thearr].AvaliableOptions, 'OptionName');
+
+
+                        for (q = 0; q < optname.length; q++) {
+                            //var opt = document.createElement("option");
+                            prepoption += '<option value="' + optid[q] + '">' + optname[q] + '</option>';
+                        }
+
+
+                        var theobj = thecats[i].replace(" ", "");
+                        var thestart = "<li class='col-12 col-xl-4 lst"+ theobj +"'><span class='lblerror'>This field is required.</span>";
+                        prepoption = "<option selected> Select " + theobj + "</option>" + prepoption;
+
+                         //alert(thestart);
+                        $('ul.row.justify-content-between.form-row').append(thestart);
+
+                        if(theobj=="Size"){
+                            theaction = theobj+"_thefunction(this.value)";
+                        }else{
+                            theaction ="";
+                        }
+
+                        var selectBox = $('<select/>')
+                            .prop('name', i)
+                            .prop('id', theobj)
+                            .attr('onchange', theaction)
+                            
+                    
+                        
+                        $('.lst'+ theobj).append(selectBox);
+                        $('select#'+theobj).append(prepoption);
+
+                        //clear up...
+                        prepoption = "";
+                        thearr = [];
+                    }
+
+
+
+                } //end for...
+
+
+
+
+            } // end success ajax...
+
+        }); //end ajax...
+
+    } //end w/ SKU
+
+
+
+
+
+    ///events........................................................
+
+
+    //contact form...
+    $('a.modalopen').click(function() {
+
+
+        $('input.wpcf7-form-control.wpcf7-text.hidden').val($('span.sku_wrapper span.sku').text());
+
+        }); 
+
+
+
+
+
+
+
+
+    /// calc price...
+
+    $('#prod_calcprice').click(function() {
+
+
+        //var thesku = $('span.sku_wrapper span.sku').text();
+
+        var theprodref = "",
+            theoptions1 = "",
+            theoptions2 = "",
+            theqty = "",
+            thewidth = "",
+            theheight = "",
+            theurl = "";
+
+
+
+        //alert(theprodtype);
+
+
+        ///
+
+
+        theprodref = $('span.sku_wrapper span.sku').text();
+
+
+        theoptions1 = $('select[name="0"]').val();
+        theoptions2 = $('select[name="1"]').val();
+        theoptions3 = $('select[name="2"]').val();
+
+
+
+        //SQM...
+        if(theprodtype=='1'){
+
+
+             
+
+
+            thewidth = $('input#thewidth').val();
+            theheight = $('input#theheight').val();
+            theqty=$('input#theqty').val();
+
+
+            //validate...
+
+            if(theqty>0){
+
+                //alert("zxc");
+
+                //custom size...
+                if(theoptions1==4){
+                    //theurl = "/inhouseprinting2/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty + "&Width=" + thewidth + "&Height=" + theheight;
+                    theurl = "https://api.inhouseprint.com.au/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty + "&Width=" + thewidth + "&Height=" + theheight;
+
+                }else{
+                    //theurl = "/inhouseprinting2/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+                    theurl = "https://api.inhouseprint.com.au/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+                }
+
+                $('.lstQuantity span.lblerror').css('display', 'none');
+
+            }else{
+
+                $('.lstQuantity span.lblerror').css('display', 'block');
+                return false;
+            }
+
+
+
+           
+            
+
+        }
+
+
+
+
+
+        //per item...
+        if(theprodtype=='2'){
+
+
+            //alert(theprodtype);
+
+            theqty=$('input#theqty').val();
+
+           
+ 
+
+           //validate...
+
+            if(theqty>0){
+
+                
+                //theurl = "/inhouseprinting2/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+
+                theurl = "https://api.inhouseprint.com.au/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+
+
+                $('.lstQuantity span.lblerror').css('display', 'none');
+
+            }else{
+
+                $('.lstQuantity span.lblerror').css('display', 'block');
+                return false;
+            }
+
+
+
+        }
+
+
+
+        //per item...
+        if(theprodtype=='3'){
+
+
+            theqty=$('input#theqty').val();
+
+           
+ 
+
+           //validate...
+
+            if($('select#Quantity').val()>0){
+
+                
+                //theurl = "/inhouseprinting2/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+
+                theurl = "https://api.inhouseprint.com.au/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+
+
+                $('.lstQuantity span.lblerror').css('display', 'none');
+
+            }else{
+
+                $('.lstQuantity span.lblerror').css('display', 'block');
+                return false;
+            }
+
+
+
+        }
+
+
+        //per item...
+        if(theprodtype=='5'){
+
+           theoptions1 = $('select[name="0"]').val();
+            theoptions2 = $('select[name="1"]').val();
+            theoptions3 = $('select[name="2"]').val();
+            theqty=$('input#theqty').val();
+
+           
+            //theurl = "/inhouseprinting2/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+
+            theurl = "https://api.inhouseprint.com.au/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&Options=" + theoptions3 + "&QTY=" + theqty
+           
+
+        }
+
+
+
+
+
+
+
+
+
+   /*     if(theprodtype=='0'){
+            theurl = "/inhouseprinting2/api/GetPrice/?ProductREF=" + theprodref + "&Options=" + theoptions1 + "&Options=" + theoptions2 + "&QTY=" + theqty + "&Width=" + thewidth + "&Height=" + theheight;
+
+        }
+*/
+        
+       // alert(theurl+"...");
+        console.log(theurl+'...');
+
+
+if(theurl){
+
+         //get price...
+        $.ajax({
+
+
+            type: "GET",
+            url: theurl,
+            //contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            cache: false,
+            //dataType: "text",
+            success: function(data) {
+
+
+
+
+                var dd = JSON.parse(JSON.stringify(data));
+
+
+
+                //calc price...
+
+                var theqty = $("input#Quantity").val();
+
+                //alert(theqty);
+
+
+                var theprc = dd.Price.replace("$", "");
+                $("html, body").animate({
+                    scrollTop: "0"
+                }, 1000);
+
+
+                /*    if(theqty>0){
+                        theqty = theqty * theprc;
+                        ///front
+                        $('span.mt-3.mb-5.text-left.prodprice, .prodes_Price p.price').html("$"+theqty);
+
+                    }else{
+                        $('.qtyerror').css('display','unset');
+                    }*/
+
+
+                $('span.mt-3.mb-5.text-left.prodprice, .prodes_Price p.price').html("$" + theprc);
+
+
+
+                //bk price...
+                $('input[name="custom_options[custom_price]"]').val(theprc);
+
+
+
+                //prod descr...
+                $('input[name="custom_options[thedesc]"]').val(thesku);
+
+                $('button#prod_addtocart').css('display', 'unset');
+
+
+
+
+                //set price api...
+                $.ajax({
+                    type: 'POST',
+                    //dataType: 'text',
+                    //url: "/inhouseprinting2/api/setprice/index.php",
+                    url: "https://api.inhouseprint.com.au/api/setprice/index.php",
+
+                    data: {
+                        'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
+                        'myt': theprc,
+                        'security': $('input#security').val()
+
+                    },
+
+
+                    success: function(data) {
+                        //alert(data)
+
+                        //$('#qwe').val(data.trim());
+                    }
+
+                });
+
+
+
+            } //end success...
+
+
+        }); //end ajax...   
+}
+
+
+  
+
+    }); //end calc button...
+
+
+
+
+
+    //checkout form...
+    $("textarea#order_comments2").bind('keyup keypress blur change', function() {
+
+
+        $('textarea#order_comments').val($("textarea#order_comments2").val());
+
+    });
+
+
+
+
+    $('button#prod_addtocart').click(function() {
+
+
+        //validate quantity...
+        /*
+            if($("input#Quantity").val()>=1){
+                $("button.single_add_to_cart_button.button.alt").trigger("click");
+
+            }else{
+                $('.qtyerror').css('display','unset');
+            }
+        */
+
+        $("button.single_add_to_cart_button.button.alt").trigger("click");
+
+    });
+
+
+    $("input#Quantity").change(function() {
+
+
+        $('input.input-text.qty.text').val($("input#Quantity").val());
+
+    });
+
+
+
+
+
+
+
+///
+
+});
+
+
+//out of document ready...
+
+    function Size_thefunction(val) {
+
+
+        //alert(val+'...');
+
+        if(val==4){
+            jQuery('input#thewidth').css('display','block');
+            jQuery('input#theheight').css('display','block');
+        }else{
+            jQuery('input#thewidth').css('display','none');
+            jQuery('input#theheight').css('display','none');
+        }
+
+        
+
+    };
+

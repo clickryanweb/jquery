@@ -1,0 +1,46 @@
+
+
+https://stackoverflow.com/questions/13370795/concatenate-selected-values-from-dynamic-dropdowns-using-jquery
+
+<select class="dropdownCode code_1" id="code_1">
+    <option value="">select</option>
+    <option value="1">one</option>
+    <option value="2">two</option>
+    <option value="3">tiga</option>
+</select>    
+
+<select class="dropdownCode code_2" id="code_2">
+    <option value="">select</option>
+    <option value="alpha">alpha</option>
+    <option value="omega">omega</option>    
+</select>    
+
+<select class="dropdownCode code_3" id="code_3">
+    <option value="">select</option>
+    <option value="X">X</option>
+    <option value="Y">Y</option>
+    <option value="Z">Z</option>
+</select>    
+
+<button class="create">Create</button>
+
+<textarea name="qwe" id="qwe" cols="30" rows="10"></textarea>
+
+
+
+
+
+
+$('.dropdownCode').change(function() {
+		//reset...
+   // $('#qwe').val('');
+    var returnVal = '';
+	
+   $('.dropdownCode').each(function() {
+       returnVal += $(this).find("option:selected").text()+", ";
+   });                    
+   //alert(returnVal);
+   
+   $('#qwe').val(returnVal);
+});
+

@@ -1,0 +1,11 @@
+$(":submit").attr('disabled', 'disabled');
+
+
+
+$('input:submit').attr("disabled", false);
+
+
+
+// enable...
+
+.removeAttr("disabled");       

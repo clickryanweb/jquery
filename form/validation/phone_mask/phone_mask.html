@@ -1,0 +1,76 @@
+<html>
+
+<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+
+
+
+ <input id="themobile" type="text" maxlength="13" placeholder="(852)1234-1234" value="852-"/>
+
+ <br />
+
+ <input id="thechk" type="text" maxlength="1" value="0"/>
+
+ <br />
+
+<input type="submit" value="Send Email" id="thebtn" autocomplete="off">
+
+
+
+
+
+
+ <script type="text/javascript">
+ 	jQuery(function ($) {
+
+
+      $("#thebtn").click(function() {
+
+            if($('#themobile').val().length == 13){
+                $('#thechk').val('1');
+            }else{
+                $('#thechk').val('0');
+                alert('Please complete the mobile number');
+                return false;
+            }
+
+         }); //close click... 
+
+
+            $('#themobile').keydown(function (e) {
+            
+             var key = e.charCode || e.keyCode || 0;
+             var text = $(this);                     
+             
+             if (key != 8 && key != 9) {
+             
+    
+             /*
+                 if (text.val().length === 4) {  
+                 text.val(text.val() + '-');  
+                 }
+             */
+
+             if (text.val().length === 4) {  
+                 text.val('852-');  
+                 }
+
+                 if ($(this).val().length ===8) {  
+                 text.val(text.val() + '-');  
+                 }
+
+             }
+
+ 	return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));      
+
+ 	})
+
+          
+
+});
+ </script>
+	</body>
+	</html>

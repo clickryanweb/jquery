@@ -1,0 +1,41 @@
+
+
+dim zxc as string = request.querystring("term") 'request.form("term")
+
+
+
+if zxc<>"" then
+ 
+
+  Dim mysql As String = "SELECT * FROM Complaint_Assign_SBU WHERE business_idx = "+ zxc +" "
+
+        dbCommand.CommandText = mysql
+        dbCommand.Connection = dbConnection
+
+        dbConnection.Open()
+
+        Dim qwe As SqlDataReader = dbCommand.ExecuteReader()
+        Dim mybp As String
+
+
+
+        While qwe.Read()
+            ' Do something with UserID here...
+            'mybp = qwe("approver")
+			sb.append("<option value="+ qwe("sbu_idx").tostring +"> "+ qwe("sbu_name") +"</option>")
+			'Response.Write(qwe("sbu_name"))
+	
+        End While
+
+
+        'Response.Write(mybp)
+   
+
+        dbConnection.Close()
+
+
+
+''response.write(rec_count)
+write_json(sb.tostring())
+
+end if

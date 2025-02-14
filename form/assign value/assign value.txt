@@ -1,0 +1,13 @@
+<script>
+
+$("#asdasd").val('q');
+
+</script>
+
+
+
+<html><body>
+
+<input type="text" id="asdasd" />
+
+</body></html>

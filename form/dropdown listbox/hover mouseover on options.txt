@@ -1,0 +1,33 @@
+
+
+http://jsfiddle.net/7pghpdbz/
+
+
+<select id="mysearchpart_stock">
+    <option>One</option>
+    <option>Two</option>
+    <option>Three</option> 
+    <option>Four</option> 
+</select>
+
+
+
+$("#mysearchpart_stock").mouseover(function(){
+    var n = $("select option").length;
+    $(this).attr("size", n);
+});
+
+
+$("#mysearchpart_stock").mouseout(function(){
+    $(this).attr("size", 1);
+});
+
+
+$("#mysearchpart_stock").on('mouseenter','option',function(e) {
+    var $target = $(e.target);
+    //console.log($target.text());
+    alert($target.text());
+});
+
+
+

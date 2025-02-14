@@ -1,0 +1,15 @@
+
+get...
+// for older jquery
+    var var_name = $("input[@name='radio_name']:checked").val();
+     
+    // for jquery 1.3
+    var var_name = $("input[name='radio_name']:checked").val();
+
+
+
+set...
+
+$('input:radio[name=sex]:nth(0)').attr('checked',true);
+or
+$('input:radio[name=sex]')[0].checked = true;

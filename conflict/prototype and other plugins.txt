@@ -1,0 +1,23 @@
+
+
+jQuery.noConflict();
+
+// Do something with jQuery
+jQuery("div p").hide();
+
+
+// Do something with another library's $()
+$("content").style.display = 'none';
+
+
+
+
+
+
+
+http://www.davidlano.com/2009/03/31/how-to-make-jquery-prototype-play-nice/
+
+
+http://learn.jquery.com/using-jquery-core/avoid-conflicts-other-libraries/
+
+

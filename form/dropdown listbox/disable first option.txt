@@ -1,0 +1,10 @@
+
+
+https://stackoverflow.com/questions/31168200/disabling-first-item-to-dropdown
+
+
+
+$("select option:first").attr("disabled", "true");
+
+
+

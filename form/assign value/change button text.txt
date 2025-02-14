@@ -1,0 +1,18 @@
+
+
+https://stackoverflow.com/questions/5580616/how-to-change-the-text-of-a-button-in-jquery
+
+
+<input type='button' value='Add' id='btnAddProfile'>
+$("#btnAddProfile").attr('value', 'Save'); //versions older than 1.6
+
+<input type='button' value='Add' id='btnAddProfile'>
+$("#btnAddProfile").prop('value', 'Save'); //versions newer than 1.6
+
+<!-- Different button types-->
+
+<button id='btnAddProfile' type='button'>Add</button>
+$("#btnAddProfile").html('Save');
+
+
+

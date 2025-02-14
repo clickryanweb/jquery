@@ -1,0 +1,58 @@
+
+
+//from inhouseprint project...
+
+
+//triggered on click by listboxes...
+
+
+//hidden field...
+<input type="hidden" class="input-text " id="selected_options" value="">
+
+
+
+//generate order desc...
+function thedesc(val1, theid) {
+
+    //reset...
+   jQuery('input[name="custom_options[thedesc]"]').val(' ');
+   jQuery('button#prod_addtocart').css('display', 'none');
+   jQuery('span.mt-3.mb-5.text-left.prodprice, .prodes_Price p.price').html('');
+   jQuery('button#prod_calcprice').css('display', 'unset');
+
+     
+       asd=jQuery('span.sku_wrapper span.sku').text() + ": ";
+
+       selval="&";
+    
+       jQuery(".dropdownCode :selected").each(function (i,sel) {
+
+
+            //alert(jQuery(sel).text());
+            
+            
+
+
+            //gen dynamic options...
+            if(jQuery(sel).val()){
+
+                asd = asd + jQuery(sel).text() + ",";
+
+                selval = selval + "Options=" + jQuery(sel).val() + "&";
+            }
+            
+
+                thestr = asd.slice(0, -1);
+                theseloptions = selval.slice(0, -1);
+
+    
+            jQuery('input[name="custom_options[thedesc]"]').val(thestr);
+            jQuery('input#selected_options').val(theseloptions);
+
+       }); 
+
+
+}
+
+
+

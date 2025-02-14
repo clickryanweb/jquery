@@ -1,0 +1,31 @@
+
+
+
+// value = 9.61 use $("#text").text() if you are not on select listbox...
+var value = $("#text").val(); 
+
+
+// value = 9:61... //replace dots...
+
+value = value.replace(".", ":"); 
+
+
+// can then use it as...
+$("#anothertext").val(value);
+
+
+----------------------------------
+
+all occurence...
+
+
+<div id="elem"></div>
+
+var elem = document.getElementById('elem'),
+    str = "28P226, 11048, 90",
+    strMod = "";
+
+strMod = str.replace(/\, /gi, "|");
+
+elem.innerHTML=strMod;
+

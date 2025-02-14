@@ -1,0 +1,30 @@
+
+
+http://jsfiddle.net/nexusmedia/pjzqw20r/
+
+
+
+
+<input id="text-to-add" type="text" value="Machine 3">
+<button id="new-item">Add to dropdown</button>
+ <form>
+     <select name="dropdown">
+         <option>Select...</option>
+         <option>Machine 1</option>
+         <option>Machine 2</option>
+     </select>
+</form>
+
+
+
+
+$(document).ready(function () {
+    $('#new-item').click(function() {
+    	console.log($('#text-to-add').val());
+        $('select').append( '<option selected>' + $('#text-to-add').val() + '</option>' );
+    });
+});
+
+
+
+

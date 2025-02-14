@@ -1,0 +1,64 @@
+
+
+<select id="sel_admission">
+    <option value="forapproval">For Approval</option>
+    <option value="approved">Approved</option>
+    </select> 
+
+
+
+ $("select#sel_admission").change(function () {
+                
+
+        var mySelect = $(this).val();
+
+        //alert(mySelect);
+
+        if(mySelect=='approved'){
+          window.location.replace("admin.php?page=application&stat=approved");
+        }
+
+        if(mySelect=='forapproval'){
+          window.location.replace("admin.php?page=application&stat=forapproval");
+        }
+
+
+
+                
+});// end function...
+
+
+
+var thestat = getQueryString()["stat"];
+
+//alert(thestat);
+
+if($("select#sel_admission").length){
+
+    //alert(thestat);
+
+        if(thestat=='approved'){
+          $("select#sel_admission").val(thestat);
+        }
+
+        if(thestat=='forapproval'){
+           $("select#sel_admission").val(thestat);
+        }
+
+}
+
+
+
+function getQueryString() {
+  var result = {}, queryString = location.search.substring(1),
+      re = /([^&=]+)=([^&]*)/g, m;
+
+  while (m = re.exec(queryString)) {
+   result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+  }
+
+  return result;
+ }
+
+
+

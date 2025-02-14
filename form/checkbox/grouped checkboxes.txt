@@ -1,0 +1,42 @@
+
+
+
+
+
+
+
+
+       	<div class="column">
+                    <h5>Type</h5>
+                    <input class="thepost" type="checkbox" id="all" value="all" name="thepost" checked><label >All</label><br>
+					<input class="thepost" type="checkbox" id="story" value="post" name="thepost"><label >Story</label><br>
+					<input class="thepost" type="checkbox" id="video" value="video" name="thepost"><label >Video</label><br>
+					<input class="thepost" type="checkbox" id="audio" value="audio" name="thepost"><label >Audio</label>
+                </div>
+
+
+
+
+
+jQuery("input.thepost").click(function(){
+
+    //alert($(this).val());
+    thesel = "";
+
+    $('input[name="thepost"]:checked').each(function() {
+       
+       //console.log(this.value);
+
+       thesel = thesel + ', ' + this.value;
+
+
+    });
+
+    //alert(thesel);
+
+    
+
+});
+
+
+

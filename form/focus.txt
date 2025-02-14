@@ -1,0 +1,7 @@
+
+//Example: To focus on a login input box with id 'login' on page startup, try:
+
+$(document).ready(function(){
+  $("#login").focus();
+});
+

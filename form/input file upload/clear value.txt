@@ -1,0 +1,2 @@
+
+$('#NewRecord1_ctl00_FileUpload1_file').val('');

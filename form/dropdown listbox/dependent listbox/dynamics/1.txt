@@ -1,0 +1,30 @@
+
+<script type="text/javascript" src="../../js/jquery-1.9.1.js"></script>
+ <script type="text/javascript">
+
+$(document).ready(function()
+{
+
+    $("#lst_bus2").change(function()
+                {
+                var id=$(this).val();
+                var dataString = 'term='+ id;
+                alert(dataString);
+
+        	$.ajax ({
+
+					
+					url: 'https://localhost/crmweb/services/svc_sbu3.aspx', //this is the JSON consist of option
+					data: dataString,
+					contentType: "application/json; charset=utf-8",
+					success: function(html){                                                                
+					$("#lst_sbu2").html(html)  //replacing option values for the listbox
+					}
+			}); //ajax...
+
+
+                }); //function
+
+        }); //jquery document...
+
+</script>

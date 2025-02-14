@@ -1,0 +1,22 @@
+
+
+
+https://stackoverflow.com/questions/1397251/event-detect-when-css-property-changed-using-jquery/21507405
+
+
+$(".observed-element").on("webkitTransitionEnd transitionend", function(e) {
+  console.log("end", e);
+  alert("z-index changed");
+});
+
+
+
+
+$(".pb-left-column").on("webkitTransitionEnd transitionend", function(e) {
+  //alert("z-index changed");
+     prodgallery();
+});
+
+
+
+

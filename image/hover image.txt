@@ -1,0 +1,51 @@
+
+
+http://jsfiddle.net/codeSpy/py2gF/
+
+
+
+
+
+img{
+    height : 100px;
+    width : 100px;
+}
+
+
+
+
+
+<img src="http://www.hdwallpapersinn.com/wp-content/uploads/2012/05/cartoon-1.jpg">
+  
+  
+
+<img src="http://wallike.com/wp-content/uploads/2013/04/winnie-the-pooh.jpg">
+  
+  
+<img src="http://wallike.com/wp-content/uploads/2013/04/disney-cartoon.jpg">
+  
+  
+
+
+
+
+$(document).ready(function(){
+    var defaultImage;
+    $("img").mouseover(function(){
+        defaultImage = $(this).attr("src");
+        var newImage = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Home_Icon.svg/512px-Home_Icon.svg.png";
+    $(this).attr("src", newImage);
+});
+
+$("img").mouseout(function(){
+    $(this).attr("src", defaultImage);
+});
+
+$("img").click(function(){
+    alert("image has been clicked!!!");
+});
+});
+
+
+
+

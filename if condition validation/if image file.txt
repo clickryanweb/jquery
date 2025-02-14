@@ -1,0 +1,16 @@
+
+
+https://stackoverflow.com/questions/29805909/jquery-how-to-check-if-uploaded-file-is-an-image-without-checking-extensions/29806920
+
+
+
+
+var file = this.files[0];
+var fileType = file["type"];
+var validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+if ($.inArray(fileType, validImageTypes) < 0) {
+     // invalid file type code goes here.
+}
+
+
+

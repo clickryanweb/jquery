@@ -1,0 +1,18 @@
+
+
+https://stackoverflow.com/questions/16149431/make-function-wait-until-element-exists/47776379
+
+
+
+var checkExist = setInterval(function() {
+   if ($('#the-canvas').length) {
+      console.log("Exists!");
+      clearInterval(checkExist);
+   }
+}, 100); // check every 100ms
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+
+
+http://jsfiddle.net/7pghpdbz/
+
+
+.highlight {
+  background-color: Yellow;
+  color: Green;
+}
+
+
+
+<select id="mysearchpart_stock">
+    <option>part</option>
+    <option>desc</option>
+    <option>qwe</option> 
+    <option>zzz</option> 
+</select>
+
+<table id="tblData" border=1><thead><tr><th class="thehead0" style="display: none;">id</th><th class="thehead1">part</th><th class="thehead2">desc</th><th class="thehead3">qwe</th><th class="thehead4">zzz</th></tr></thead><tbody><tr><td class="id" style="display: none;">1</td><td class="part">1</td><td class="desc">qwe1</td><td class="qwe">d qwdqw5</td><td class="zzz">PE 1021-12</td></tr><tr><td class="id" style="display: none;">2</td><td class="part">2</td><td class="desc">qwe2</td><td class="qwe">dq wdqw4</td><td class="zzz">PE1021-12</td></tr><tr><td class="id" style="display: none;">3</td><td class="part">3</td><td class="desc"></td><td class="qwe">dqw dqw3</td><td class="zzz">PE 102112</td></tr><tr><td class="id" style="display: none;">4</td><td class="part">4</td><td class="desc">qwe4</td><td class="qwe">dqwd qw2</td><td class="zzz">aaas</td></tr><tr><td class="id" style="display: none;">5</td><td class="part">5</td><td class="desc">qwe5</td><td class="qwe">dqwdq w1</td><td class="zzz">sss</td></tr><tr><td class="id" style="display: none;">6</td><td class="part">6</td><td class="desc"></td><td class="qwe">dqwdqw 5</td><td class="zzz">dddd</td></tr><tr><td class="id" style="display: none;">7</td><td class="part">7</td><td class="desc">qwe7</td><td class="qwe">dqwdq w4</td><td class="zzz">brrr</td></tr><tr><td class="id" style="display: none;">8</td><td class="part">8</td><td class="desc">qwe8</td><td class="qwe">dqwd qw3</td><td class="zzz">xxxx</td></tr><tr><td class="id" style="display: none;">9</td><td class="part">9</td><td class="desc"></td><td class="qwe">dqw dqw2</td><td class="zzz">cccc</td></tr></tbody></table>
+
+
+
+
+$("#mysearchpart_stock").mouseover(function(){
+    var n = $("select option").length;
+    //alert(n);
+    $(this).attr("size", 3);
+});
+
+
+$("#mysearchpart_stock").mouseout(function(){
+    $(this).attr("size", 1);
+    $("#tblData th").removeClass("highlight");
+});
+
+
+$("#mysearchpart_stock").on('mouseenter','option',function(e) {
+    var $target = $(e.target);
+
+
+   var th_index = $target.index()+1;
+    $('tr').each(function() {
+    		
+        $(this).find('th').eq(th_index).addClass('highlight');
+    });
+    
+});
+
+

@@ -1,0 +1,12 @@
+
+
+https://stackoverflow.com/questions/18558417/get-first-word-of-string
+
+
+var totalWords = "foo love bar very much.";
+
+var firstWord = totalWords.replace(/ .*/,'');
+
+$('body').append(firstWord);
+
+

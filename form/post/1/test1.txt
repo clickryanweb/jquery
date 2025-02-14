@@ -1,0 +1,22 @@
+<body>
+{Includable_js_lib} <br>
+<br>
+<br>
+<script type="text/javascript">
+$(function()
+{
+        $.post("test2.aspx",
+        {
+                name: "John Doe",
+                age: "42"
+        },
+        function(result){
+    		  $("span").html(result);
+    });
+
+});
+</script>
+<br>
+<p><span></span></p>
+
+</body>

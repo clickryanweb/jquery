@@ -1,0 +1,56 @@
+
+
+//trigger link...
+
+https://www.tutorialrepublic.com/faq/how-to-trigger-a-click-on-a-link-using-jquery.php
+
+
+$(document).ready(function(){
+
+    $("button").click(function(){
+        $("a")[0].click();
+    });
+
+});
+
+
+
+
+
+
+//trigger from child / modal...
+https://www.highcharts.com/forum/viewtopic.php?t=30831
+
+parent.$("#contentPanel1Button1").trigger("click");
+parent.$('#pField').trigger('onblur');
+
+
+
+$("#foo").on("click", function() {
+
+  alert( $( this ).text() );
+
+});
+
+
+
+//class and data-id...
+ $('.Button[data-id="qryPaymentButton_Submit"]').trigger("click");
+
+
+
+$("#foo").trigger("click");
+
+
+
+//for select, listbox
+$(selector).trigger("change");
+//then call the function...
+
+
+
+
+//for textbox...
+$("#thesearch").trigger("keyup");
+
+

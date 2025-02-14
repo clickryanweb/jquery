@@ -1,0 +1,31 @@
+
+
+https://stackoverflow.com/questions/31044/is-there-an-exists-function-for-jquery
+
+
+
+        if ($('.video-embed-field-provider-youtube').length){
+
+        	alert('...');
+
+        }
+
+
+
+///if not...
+
+
+ if (jQuery('div[itemprop="articleBody"] .top-banner').length==0){
+
+        	//alert('...');
+
+    jQuery('div[itemprop="articleBody"]').css("margin-top","5%")
+
+}
+
+
+
+
+
+
+

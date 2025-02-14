@@ -1,0 +1,7 @@
+$.ajax({
+        url: "userfiles/files/web/news.html",
+        success: function() {
+            //$("#play_button").show();
+			$("div.b1").append("&nbsp;<font color=yellow>[+]</font> "); 
+        }
+    });
