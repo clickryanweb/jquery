@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>jQuery UI Dialog Example</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.20.custom.min.js"></script>
+<script type="text/javascript">
+    function openDialog() {
+       $("#somediv").dialog({modal: true});
+    } 
+</script>
+</head>
+<body>
+    <div id="somediv">Some text to display</div>
+    <a href="#" onclick="openDialog();">Dialog</a>
+</body>
+</html>
+

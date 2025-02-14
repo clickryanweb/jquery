@@ -1,0 +1,15 @@
+
+
+https://www.tutorialrepublic.com/faq/how-to-set-css-background-image-property-using-jquery.php
+
+
+
+$(document).ready(function(){
+    // Set background image of a div on click of the button
+    $("button").click(function(){
+        var imageUrl = "images/sky.jpg";
+        $(".box").css("background-image", "url(" + imageUrl + ")");
+    });    
+});
+
+

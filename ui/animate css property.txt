@@ -1,0 +1,29 @@
+$("div.gallery").click(function () {
+
+ go_reset();
+
+var mycontent="div.c2";
+
+if ($(mycontent).is(":hidden")) {
+	//$("div.c2").animate({width:400},"slow");
+    //$("div.c2").animate({height:200},"slow");
+	  $(mycontent).animate({
+    width: "400px",
+	height: "200"
+    //opacity: 0.4,
+   // marginLeft: "-100px"
+	//marginTop: "100px"
+ //   borderWidth: "10px",
+
+  }, "fast" );
+
+	$(mycontent).show("slow");
+
+    } else {
+      $(mycontent).hide("slow");
+	$(mycontent).animate({width:0},"fast");
+$(mycontent).animate({height:0},"fast");
+
+   
+    }
+}); 

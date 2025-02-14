@@ -1,0 +1,19 @@
+
+
+
+https://stackoverflow.com/questions/18413684/jquery-check-if-css-property-was-set
+
+
+var $el = $(element);
+
+
+if ( $el.prop('style').backgroundColor == '' ) {
+   ... 
+}
+
+
+
+
+
+
+

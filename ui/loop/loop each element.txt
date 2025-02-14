@@ -1,0 +1,19 @@
+
+
+https://stackoverflow.com/questions/4735342/jquery-to-loop-through-elements-with-the-same-class
+
+
+https://www.w3schools.com/jquery/traversing_parent.asp
+
+
+
+  $.each($('.col-lg-4.col-md-6.col-sm-12.mb-4'), function(index, value) { 
+      console.log(index + ':' + value); 
+      //alert(index);
+
+      if(index+1 >numofheads){
+        $(this).removeClass("mb-4");
+      }
+
+
+

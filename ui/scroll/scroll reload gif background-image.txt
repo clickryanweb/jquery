@@ -1,0 +1,38 @@
+
+
+https://stackoverflow.com/questions/7568855/restart-animated-gif-as-background-image
+
+
+http://jsfiddle.net/64fZa/5/
+
+
+
+<div class="bird-bg" id="animated" style="background-image: url(&quot;http://localhost/nudie/wp-content/themes/nudie/assets/images/bird_anim2.gif?p=1600330883849&quot;);">
+
+		</div>
+
+
+
+
+//////
+
+
+var targetOffset = $(".blog-section-wrapper").offset().top;
+
+$(window).scroll(function(){
+
+  var thebird = "http://localhost/nudie/wp-content/themes/nudie/assets/images/bird_anim2.gif?p=" + new Date().getTime();
+    if ( $(window).scrollTop() > targetOffset ) {   
+        // Do stuffs here
+       // alert(targetOffset);
+          //alert('hello');
+          //$('.bird-bg').css('background-image', "url('"+thebird+"')");
+
+      $('.bird-bg').css({backgroundImage: "url("+thebird.replace("image/gif","image/gif;rnd="+Math.random())+")"});
+
+       
+    }
+
+
+});
+

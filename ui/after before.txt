@@ -1,0 +1,28 @@
+
+
+https://www.w3schools.com/jquery/html_after.asp
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".zzz").after("<p>Hello world!</p>");
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Insert content after each p element</button>
+
+<p>This is a paragraph.</p>
+<p class="zzz">This is another paragraph.</p>
+
+</body>
+</html>
+
+

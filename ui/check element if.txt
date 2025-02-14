@@ -1,0 +1,29 @@
+
+
+if($('#yourID').css('display') == 'none')
+{
+
+}
+
+
+
+//0 not visible...
+if($('#yourID:visible').length == 0)
+{
+
+}
+
+
+
+To check the display property with JavaScript
+
+var isVisible = document.getElementById("yourID").style.display == "block";
+var isHidden = document.getElementById("yourID").style.display == "none"; 
+
+
+--------------------if div has text....
+
+if ($("#box3").text().length > 0) {
+     $('#third').show();
+   }    
+

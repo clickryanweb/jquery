@@ -1,0 +1,28 @@
+
+//https://stackoverflow.com/questions/14846506/append-prepend-after-and-before
+
+append(), prepend(), .after() and .before() 
+
+
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $("button").click(function(){
+    $("p").append(" <b>W3Schools</b>.");
+  });
+
+});
+</script>
+</head>
+
+<body>
+<h2>This is a heading</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button>Click me</button>
+</body>
+</html>
+

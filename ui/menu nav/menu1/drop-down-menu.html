@@ -1,0 +1,27 @@
+<html>
+
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+
+        var s = 'aBC';
+        // Getting URL var by its nam
+        var byName = $.getUrlVar('product');
+
+        alert(byName);
+
+        $("#menu").find("a").filter(function(){
+	        
+           return this.href.split('=')[1].toLowerCase() === s.toLowerCase();
+        }).addClass("selected");
+
+
+
+	</script>
+	
+	<div id="menu">
+    <div class="item"><a href="?product=abc">ABC</a></div>
+    <div class="item"><a href="?product=XYZ">XYZ</a></div>
+    <div class="item"><a href="?product=Test">Test</a></div>
+</div>
+</body>
+</html>

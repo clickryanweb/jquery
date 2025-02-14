@@ -1,0 +1,11 @@
+
+
+
+https://www.geeksforgeeks.org/how-to-animate-scrolltop-using-jquery/
+
+
+$("html, body").animate( 
+                { scrollTop: "0" }, 3000); 
+
+
+

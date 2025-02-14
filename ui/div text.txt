@@ -1,0 +1,13 @@
+
+
+https://stackoverflow.com/questions/1103172/jquery-change-div-text
+
+
+
+<span id="dialog_title_span">'+dialog_title+'</span>
+
+$('#dialog_title_span').text("new dialog title");
+
+
+
+

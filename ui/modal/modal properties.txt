@@ -1,0 +1,17 @@
+//$("#somediv").dialog({
+$("<iframe id=myframe src=myform.aspx?officer_id="+ sPage +" frameborder=0 scrolling=no></iframe>").dialog({
+
+modal: true,
+autoOpen: true,
+resizable: true,
+buttons:{
+            'Close':function(){$(this).dialog("close");},
+            'Submit':function(){ $("#myframe").contents().find('form').submit();}
+}
+});
+
+//$("#somediv").html("<iframe id='myframe' src=myform_plain.aspx?officer_id="+ sPage +" frameborder=0 scrolling=no></iframe>");
+//$("#somediv").load("myform2.aspx?officer_id="+ sPage);
+
+
+}

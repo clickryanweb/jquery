@@ -1,0 +1,18 @@
+
+http://jsfiddle.net/7qAtz/3/
+
+
+https://stackoverflow.com/questions/20469816/jquery-remove-class-when-width-screen-is-1050px/20469969
+
+
+
+function checkWidth() {
+    if ($(window).width() < 514) {
+        $('#menu2').addClass('f-nav');
+    } else {
+        $('#menu2').removeClass('f-nav');
+    }
+}
+
+$(window).resize(checkWidth);
+

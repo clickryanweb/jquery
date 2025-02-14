@@ -1,0 +1,10 @@
+
+
+http://jsfiddle.net/amit00193/kma7o4vf/
+
+ $('html').animate({
+ 		scrollTop: $(".scroll_chat").offset().top},'slow');
+
+
+
+

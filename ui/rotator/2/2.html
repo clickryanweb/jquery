@@ -1,0 +1,55 @@
+
+
+<html>
+<head>
+
+<style type="text/css">
+
+.slideshow {
+  display: block;
+  left: 66%;
+  margin-left: -246px;
+  position: absolute;
+  top: 5px;
+  width: 448px;
+  height: 238px;
+}
+
+#nav a { border: 1px solid #ccc; background: #fc0; text-decoration: none; margin: 0 5px; padding: 3px 5px;  }
+#nav a.activeSlide { background: #ea0 }
+#nav a:focus { outline: none; }
+
+/*.slideshow img { padding: 15px; border: 1px solid #ccc; background-color: #eee; }
+*/
+</style>
+<!-- include jQuery library -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- include Cycle plugin -->
+<script type="text/javascript" src="js/jquery.cycle.all.latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   
+    $('.slideshow').before('<div id="nav">') 
+.cycle({ 
+   fx:     'fade', 
+    speed:   300, 
+    timeout: 3000, 
+    next:   '.slideshow', 
+    pause:   1 ,
+	 pager:  '#nav' 
+});
+
+}); //end document...
+</script>
+</head>
+<body>
+	<div class="slideshow">
+		<img src="http://smsi.edu.ph/uploads/files/flasher/1.JPG" width="448" height="238" />
+		<img src="http://smsi.edu.ph/uploads/files/flasher/2.JPG" width="448" height="238" />
+		<img src="http://smsi.edu.ph/uploads/files/flasher/3.JPG" width="448" height="238" />
+		<img src="http://smsi.edu.ph/uploads/files/flasher/4.JPG" width="448" height="238" />
+		<img src="http://smsi.edu.ph/uploads/files/flasher/5.JPG" width="448" height="238" />
+	</div>
+</body>
+</html>
+

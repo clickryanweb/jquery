@@ -1,0 +1,18 @@
+
+
+https://stackoverflow.com/questions/10061414/changing-width-property-of-a-before-css-selector-using-jquery/10061479
+
+
+http://jsfiddle.net/xE7JP/2/
+
+
+$('p').one('click',function(){
+		$('head').append('<style>p{color:red;}</style>');
+});
+
+
+
+
+https://stackoverflow.com/questions/17788990/access-the-css-after-selector-with-jquery
+
+

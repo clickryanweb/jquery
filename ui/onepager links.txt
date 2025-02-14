@@ -1,0 +1,36 @@
+
+
+https://jsfiddle.net/cse_tushar/Dxtyu/141/
+
+
+http://jsfiddle.net/fr0z3nfyr/3wdch/
+
+
+http://jsfiddle.net/sfwo6gxn/
+
+
+http://jsfiddle.net/iamweswilson/a41z24ng/
+
+
+
+http://jsfiddle.net/Lighty_46/6hpG9/
+
+
+
+////////////////////////////////////
+
+
+
+
+jQuery('ul li a').live('click', function () {
+    var $this = jQuery(this);
+
+    var qwe = $this.attr("href");
+    
+    var res = qwe.replace("http://localhost/ghpremierreview/#", ""); 
+
+
+    //alert(jQuery('#success').position().top);
+
+ 
+});

@@ -1,0 +1,16 @@
+
+
+///events...
+
+var theflg1 = getQueryString()["chgpw"];
+//alert(mycid);
+
+if(theflg1=="1"){
+	alert('In order to continue, please update your password first.');
+	 $('html').animate({
+ 		scrollTop: $("#mymembersmem_min_order").offset().top},'slow');
+}
+
+});
+
+

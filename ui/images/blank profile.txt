@@ -1,0 +1,22 @@
+
+
+http://jsfiddle.net/alexbihary/aWvyF/
+
+
+
+<div class="container">
+    <img src="/dne.jpg" width="300" height="100"  onerror="return imageOnError(this);" />
+</div>
+
+
+
+
+function imageOnError(img) {
+    img.onerror = '';
+    var stub = $('<div />').css({ 'height': $(img).height(), 'width': $(img).width() })
+        .addClass('stub').html('<img src=http://s3.amazonaws.com/37assets/svn/765-default-avatar.png>');
+    $(img).parent().html(stub);
+    return true;
+}
+
+

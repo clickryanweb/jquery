@@ -1,0 +1,13 @@
+
+
+
+<span id="breadtitle">&nbsp;</span>
+
+
+var thepage = "Admission";
+
+$('#breadtitle').text(thepage);
+document.title = thepage;
+
+
+

@@ -1,0 +1,15 @@
+$("button").click(function(){
+    $("p").removeClass("intro");
+});
+
+
+
+//add class...
+
+.addClass('highlite');
+
+
+
+//add ID
+
+$(element).attr('id', 'newID');

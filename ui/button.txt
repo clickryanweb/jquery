@@ -1,0 +1,11 @@
+
+
+
+	setTimeout(
+		function() 
+		{
+			$("button.components-button.editor-post-publish-panel__toggle.editor-post-publish-button__button.is-primary.is-compact").html("SAVE");
+		}, 2000);
+
+
+

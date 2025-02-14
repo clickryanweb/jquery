@@ -1,0 +1,114 @@
+﻿<html lang="en">
+<head>
+
+<link rel="stylesheet" href="styles/jquery-ui.css">
+<script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<div id="accordion">
+<h3>Section 1</h3>
+    <div>
+    <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget.
+    Integer ut neque. Vivamus nisi metus, molestie vel, gravida in,
+    condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros.
+    Nam mi. Proin viverra leo ut odio.</p>
+
+        <a href="#" id="btn1">next</a>
+
+    </div>
+
+<h3>Section 2</h3>
+    <div style="height: auto">
+    qwe qweqweqwe qweqweqweqwe qweqweqw qweqweqwe <a href="#" id="btn2">next</a>
+    </div>
+
+<h3>Section 3</h3>
+    <div>
+    <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus.
+    Quisque lobortis.Phasellus pellentesque purus in massa.</p>
+    <ul>
+    <li>List item one</li>
+    <li>List item two</li>
+    <li>List item three</li>
+       
+    </ul> <a href="#" id="btn3">next</a>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+  
+        var mywiz=0;
+
+        $("#accordion").accordion();
+
+        $("#accordion").accordion({
+            heightStyle: "content",
+            collapsible: true
+        });
+
+        $("#accordion").accordion({
+            active: 2
+        });
+
+
+        $("#accordion h3").bind("click", function () {
+
+            alert($(this).index());
+
+        });
+
+
+        $("#btn1").click(function () {
+
+            mywiz = mywiz + 1;
+
+            $("#accordion").accordion({
+
+                active: mywiz
+                
+            });
+
+            alert(mywiz);
+        })
+
+
+
+        $("#btn2").click(function () {
+
+            mywiz = mywiz + 1;
+
+            $("#accordion").accordion({
+
+                active: mywiz
+
+            });
+
+            alert(mywiz);
+        })
+
+
+
+        $("#btn3").click(function () {
+
+            mywiz = mywiz + 1;
+
+            $("#accordion").accordion({
+
+                active: mywiz
+
+            });
+
+            alert(mywiz);
+        })
+
+
+
+
+    }) //end doc...
+    
+</script>
+</body>
+</html>

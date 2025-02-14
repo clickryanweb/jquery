@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+<style type="text/css">
+	
+
+
+/* text-controls */
+
+button {
+	vertical-align: bottom;
+	margin: 0 0.3125em;
+	padding: 0 0.3125em;
+	border: 1px solid #000;
+	background-color: #fff;
+	font-weight: bold;
+}
+
+button#increasetext {
+	font-size: 1.50em;
+}
+
+button#resettext {
+	font-size: 1.25em;
+}
+
+button#decreasetext {
+	font-size: 1.125em;
+}
+
+.textcontrols {
+	padding: 0.625em 0;
+	background: #ccc;
+}
+
+
+
+
+
+</style>	
+</head>
+<body>
+
+https://codepen.io/anaarezo/pen/rjPoEZ
+
+<div class="container">
+	<header>
+
+
+		<div class="textcontrols">
+			<button role="button" id="decreasetext"> <span>smaller</span>
+			</button>
+			<button role="button" id="resettext">
+				<span>normal</span>
+			</button>
+			<button role="button" id="increasetext">
+				<span>bigger</span>
+			</button>
+		</div>
+		<!--/.textcontrols-->
+	</header>
+
+
+
+
+	<main class="content" role="main">
+		<div id="description">
+			<h2>Allow users to resize text on the page via button controls.</h2>
+			<p>In this instance, users can decrease text, increase text, or reset it back to normal.</p>
+			<h2>Set default text size with CSS</h2>
+			<p>The default text size must be set using an internal stylesheet in the header of your page. In this case: <code>font-size: 1.125em</code> (aka, 18px).</p>
+			<h2>Set the controls with JavaScript</h2>
+			<p>Then we set the resize controls with JavaScript. In this example, we're resizing all text within the div with an id of "content".</p>
+			<p>The controls check the current text size, and then changes it (or not) accordingly.</p>
+		</div>
+		<!--/#description-->
+	</main>
+	<!--/#content-->
+</div>
+<!--/#container-->
+
+
+
+<script type="text/javascript">
+
+
+		// Increase/descrease font size
+	$('#increasetext').click(function() {
+		curSize = parseInt($('.content').css('font-size')) + 2;
+		if (curSize <= 32)
+			$('.content').css('font-size', curSize);
+	});
+
+
+
+	$('#decreasetext').click(function() {
+		curSize = parseInt($('.content').css('font-size')) - 2;
+		if (curSize >= 14)
+			$('.content').css('font-size', curSize);
+	});
+
+
+
+	$('#resettext').click(function() {
+		if (curSize != 18)
+			$('.content').css('font-size', 18);
+	});
+
+
+
+</script>
+
+</body>
+</html>

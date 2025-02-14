@@ -1,0 +1,35 @@
+
+
+<script>  $("#Panel1Panel2notes_detailsremarks_2").css("display", "none"); </script>
+
+
+
+//disable button...
+$("#button").prop('disabled', true);
+$("#button").attr('disabled', true);
+
+
+change img...
+$('#my_image').attr('src','second.jpg');
+
+
+
+//placeholder
+$(this).attr("placeholder", "Type your answer here");
+
+
+
+
+//div width...
+$('#blueBar').width( 30 );
+
+
+
+
+//span text...
+
+$('#abc span').text('baa baa black sheep');
+$('#abc span').html('baa baa <strong>black sheep</strong>');
+
+
+

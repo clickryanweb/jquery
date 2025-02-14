@@ -1,0 +1,65 @@
+﻿<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="styles/jquery-ui.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+
+
+    <script>
+    $(function () {
+        $("#accordion").accordion({
+            heightStyle: "content"
+        });
+
+
+        $("#myreview").click(function () {
+
+            $('#accordion .ui-accordion-content').show();
+        })
+        
+    });
+
+
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+
+    <div style="height:100%; width: 50%; text-align:left">
+        <div id="accordion">
+            <h3>Tab 1 </h3>
+            <div style="align-content:stretch">
+                Tab 1 content
+                <br>Tab 1 content
+                <br>Tab 1 content
+                <br>Tab 1 content
+                <br>Tab 1 content
+                <br>Tab 1 content
+                <br>
+            </div>
+            <h3>Tab 2 </h3>
+            <div>
+                Tab 2 content
+                <br>Tab 2 content
+            </div>
+            <h3>Tab 3 </h3>
+            <div>
+            Tab 3 content
+            </div>
+        </div>
+    </div>
+ 
+   <br><br><a href="#" id="myreview">Review </a>
+
+</body>
+
+
+</html>

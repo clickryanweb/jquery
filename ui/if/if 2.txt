@@ -1,0 +1,28 @@
+
+
+<script type="text/javascript">
+	
+	$('#menu-point-wrapper').hide();
+
+	$(document).ready(function(){
+
+
+    $(".hamburger").click(function(){
+
+        $(this).toggleClass("is-active");
+        $("body").toggleClass("is-active");
+
+        if($('#menu-point-wrapper').is(":hidden")) {
+        	alert('!!!');
+        	$('#menu-point-wrapper').show();
+        }else{
+        	alert('...');
+        	$('#menu-point-wrapper').hide();
+        }
+
+        
+    })
+});
+</script>
+
+

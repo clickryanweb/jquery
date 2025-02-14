@@ -1,0 +1,45 @@
+
+
+https://stackoverflow.com/questions/36029058/how-to-find-scroll-top-value-for-div
+
+
+https://jsfiddle.net/zc90eukg/1/
+
+
+
+#jiff {
+  width: 100%;
+  height: 2000px;
+  background: red;
+}
+
+#test {
+  width: 100%;
+  height: 1000px;
+  background: blue;
+}
+
+
+
+
+
+<div id="jiff">
+
+</div>
+<video id="test">
+</video>
+
+
+
+   $(window).scroll(function () {
+      var scrollTop = $(window).scrollTop();
+       var scrollToVid = $('#test').offset().top
+        console.log(scrollTop);
+        console.log(scrollToVid);
+        
+        if ($(window).scrollTop() >= 2008) {
+        alert('You reached to the video!');
+        }
+      });
+
+
